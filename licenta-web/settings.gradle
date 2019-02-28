@@ -1,0 +1,2 @@
+include ':licenta-core'
+project(':licenta-core').projectDir = new File(settingsDir, '../licenta-core')

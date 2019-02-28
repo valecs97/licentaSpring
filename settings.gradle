@@ -1,0 +1,4 @@
+rootProject.name = 'licenta-2-crud'
+include 'licenta-core'
+include 'licenta-web'
+
