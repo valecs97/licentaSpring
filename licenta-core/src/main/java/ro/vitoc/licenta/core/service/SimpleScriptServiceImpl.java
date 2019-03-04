@@ -49,11 +49,11 @@ public class SimpleScriptServiceImpl implements SimpleScriptService {
     }*/
 
     @Override
-    public SimpleScript createSimpleScript(String gitUrl, Boolean webhook, Integer timeout) {
+    public SimpleScript createSimpleScript(String gitUrl, String branch, Boolean webhook, Integer timeout) {
         log.trace("createSimpleScript: gitUrl={}, webhook={}, timeout={}",
                 gitUrl, webhook, timeout);
 
-        SimpleScript simpleScript = SimpleScript.builder().gitUrl(gitUrl).webhook(webhook).timeout(timeout).build();
+        SimpleScript simpleScript = SimpleScript.builder().gitUrl(gitUrl).branch(branch).webhook(webhook).timeout(timeout).build();
         simpleScript = simpleScriptRepository.save(simpleScript);
 
         log.trace("createSimpleScript: simpleScript={}", simpleScript);

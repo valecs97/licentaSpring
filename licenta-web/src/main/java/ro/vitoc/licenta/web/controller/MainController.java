@@ -1,5 +1,6 @@
 package ro.vitoc.licenta.web.controller;
 
+import org.eclipse.jgit.api.errors.GitAPIException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.vitoc.licenta.core.model.SimpleScript;
+import ro.vitoc.licenta.core.service.ProjectService;
 import ro.vitoc.licenta.core.service.SimpleScriptService;
 import ro.vitoc.licenta.web.converter.SimpleScriptConvertor;
 import ro.vitoc.licenta.web.dto.EmptyJsonResponse;
@@ -22,6 +24,9 @@ public class MainController {
 
     @Autowired
     private SimpleScriptService simpleScriptService;
+
+    @Autowired
+    private ProjectService projectService;
 
     @Autowired
     private SimpleScriptConvertor simpleScriptConvertor;
@@ -56,12 +61,20 @@ public class MainController {
     }*/
 
     @RequestMapping(value = "/simpleScript", method = RequestMethod.POST)
-    public SimpleScriptDto createSimpleScript(
+    public ResponseEntity createSimpleScript(
             @RequestBody final SimpleScriptDto simpleScriptDto) {
         log.trace("createSimpleScript: simpleScriptDto={}", simpleScriptDto);
 
-        SimpleScript simpleScript = simpleScriptService.createSimpleScript(
+        SimpleScript simpleScript = simpleScriptConvertor.convertDtoToModel(simpleScriptDto);
+
+        if (!projectService.cloneGitRepository(simpleScript.getGitUrl(), simpleScript.getBranch()))
+            return new ResponseEntity(new EmptyJsonResponse(), HttpStatus.NOT_FOUND);
+
+        String branch = projectService.getBranchRef(simpleScriptDto.getGitUrl(),simpleScriptDto.getBranch()).getName();
+
+        simpleScript = simpleScriptService.createSimpleScript(
                 simpleScriptDto.getGitUrl(),
+                branch,
                 simpleScriptDto.getWebhook(),
                 simpleScriptDto.getTimeout());
 
@@ -69,7 +82,7 @@ public class MainController {
 
         log.trace("createdSimpleScript: result={}", result);
 
-        return result;
+        return new ResponseEntity(new EmptyJsonResponse(), HttpStatus.OK);
     }
 /*
     @RequestMapping(value = "students/{studentId}", method = RequestMethod.DELETE)

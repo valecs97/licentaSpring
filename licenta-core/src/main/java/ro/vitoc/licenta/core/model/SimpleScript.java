@@ -13,8 +13,8 @@ public class SimpleScript extends BaseProject{
     private Integer timeout;
 
     @Builder
-    public SimpleScript(String gitUrl, Boolean webhook, Integer timeout){
-        super(gitUrl,webhook);
+    public SimpleScript(String gitUrl, String branch, Boolean webhook, Integer timeout){
+        super(gitUrl,branch,webhook);
         this.timeout = timeout;
     }
 }

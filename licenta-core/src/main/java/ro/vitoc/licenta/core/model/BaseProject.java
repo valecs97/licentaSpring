@@ -13,5 +13,7 @@ import java.io.Serializable;
 @ToString
 public abstract class BaseProject extends BaseEntity<Long> implements Serializable {
     private String gitUrl;
+    private String branch;
     private Boolean webhook;
+
 }

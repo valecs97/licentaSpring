@@ -9,7 +9,7 @@ public interface SimpleScriptService {
 
     //Student updateStudent(Long studentId, String serialNumber, String name, Integer groupNumber);
 
-    SimpleScript createSimpleScript(String gitUrl, Boolean webhook, Integer timeout);
+    SimpleScript createSimpleScript(String gitUrl, String branch, Boolean webhook, Integer timeout);
 
     //void deleteStudent(Long studentId);
 

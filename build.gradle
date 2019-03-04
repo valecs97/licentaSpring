@@ -65,6 +65,8 @@ allprojects {
         //lombok
         compile group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
 
+        compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '4.8.0.201706111038-r'
+
 
     }
 

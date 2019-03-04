@@ -14,6 +14,7 @@ public class SimpleScriptConvertor extends BaseConverter<SimpleScript, SimpleScr
     public SimpleScript convertDtoToModel(SimpleScriptDto dto) {
         SimpleScript simpleScript = SimpleScript.builder()
                 .gitUrl(dto.getGitUrl())
+                .branch(dto.getBranch())
                 .webhook(dto.getWebhook())
                 .timeout(dto.getTimeout())
                 .build();
@@ -24,6 +25,7 @@ public class SimpleScriptConvertor extends BaseConverter<SimpleScript, SimpleScr
     public SimpleScriptDto convertModelToDto(SimpleScript simpleScript) {
         SimpleScriptDto dto = SimpleScriptDto.builder()
                 .gitUrl(simpleScript.getGitUrl())
+                .branch(simpleScript.getBranch())
                 .webhook(simpleScript.getWebhook())
                 .timeout(simpleScript.getTimeout())
                 .build();

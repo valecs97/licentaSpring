@@ -53,6 +53,8 @@
             <element id="module-output" name="ro.vitoc.licenta-licenta-core_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/licenta-core/src/main/resources" />
           </element>
+          <element id="library" level="project" name="Gradle: org.eclipse.jgit:org.eclipse.jgit:4.8.0.201706111038-r" />
+          <element id="library" level="project" name="Gradle: com.jcraft:jsch:0.1.54" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ro.vitoc.licenta-licenta-web_main/web/Web Gradle : licenta-web-1.0-SNAPSHOT.war" />
