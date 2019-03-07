@@ -2,17 +2,15 @@ package ro.vitoc.licenta.web.dto;
 
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @ToString
 public class SimpleScriptDto extends BaseProject {
-    private Integer timeout;
-
     @Builder
-    public SimpleScriptDto(String gitUrl, String branch, Boolean webhook, Integer timeout){
-        super(gitUrl, branch, webhook);
-        this.timeout = timeout;
+    public SimpleScriptDto(String name, String gitUrl, String branch, String webhook, String lang, String main, List<String> req, Integer parameters) {
+        super(name, gitUrl, branch, webhook, lang, main, req, parameters);
     }
 }

@@ -1,20 +1,27 @@
 package ro.vitoc.licenta.web.controller;
 
-import org.eclipse.jgit.api.errors.GitAPIException;
+import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.core.DefaultDockerClientConfig;
+import com.github.dockerjava.core.DockerClientBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ro.vitoc.licenta.core.model.BaseProject;
 import ro.vitoc.licenta.core.model.SimpleScript;
-import ro.vitoc.licenta.core.service.ProjectService;
+import ro.vitoc.licenta.core.service.CommonService;
+import ro.vitoc.licenta.core.service.DockerService;
+import ro.vitoc.licenta.core.service.GitService;
 import ro.vitoc.licenta.core.service.SimpleScriptService;
 import ro.vitoc.licenta.web.converter.SimpleScriptConvertor;
 import ro.vitoc.licenta.web.dto.EmptyJsonResponse;
 import ro.vitoc.licenta.web.dto.SimpleScriptDto;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -24,10 +31,12 @@ public class MainController {
 
     @Autowired
     private SimpleScriptService simpleScriptService;
-
     @Autowired
-    private ProjectService projectService;
-
+    private GitService gitService;
+    @Autowired
+    private DockerService dockerService;
+    @Autowired
+    private CommonService commonService;
     @Autowired
     private SimpleScriptConvertor simpleScriptConvertor;
 
@@ -60,29 +69,55 @@ public class MainController {
         return result;
     }*/
 
+    @RequestMapping(value = "/simpleScript", method = RequestMethod.GET)
+    public ResponseEntity executeSimpleScript(
+            @RequestParam(value = "name") String tag,
+            @RequestParam(value = "args") List<String> args
+    ) {
+        log.trace("executeSimpleScript");
+
+        String result = dockerService.runImage(tag,args);
+
+        log.trace("executeSimpleScript: result={}", result);
+
+        return new ResponseEntity(result, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/simpleScript", method = RequestMethod.POST)
     public ResponseEntity createSimpleScript(
             @RequestBody final SimpleScriptDto simpleScriptDto) {
         log.trace("createSimpleScript: simpleScriptDto={}", simpleScriptDto);
 
         SimpleScript simpleScript = simpleScriptConvertor.convertDtoToModel(simpleScriptDto);
+        String branch = gitService.getBranchRef(simpleScriptDto.getGitUrl(),simpleScriptDto.getBranch()).getName();
+        simpleScript.setBranch(branch);
+        simpleScript.setLocation(gitService.getLocation(simpleScript.getName()));
 
-        if (!projectService.cloneGitRepository(simpleScript.getGitUrl(), simpleScript.getBranch()))
-            return new ResponseEntity(new EmptyJsonResponse(), HttpStatus.NOT_FOUND);
+        if (!gitService.cloneGitRepository(simpleScript.getName(),simpleScript.getGitUrl(), simpleScript.getBranch()))
+            return new ResponseEntity("Repository does not exists ! Or another error.",HttpStatus.NOT_FOUND);
 
-        String branch = projectService.getBranchRef(simpleScriptDto.getGitUrl(),simpleScriptDto.getBranch()).getName();
+        try {
+            commonService.createRequirementsFile(simpleScript);
+            switch (commonService.createDockerFile(simpleScript)){
+                case 1:
+                    return new ResponseEntity("The programming language specified by you does not exists !",HttpStatus.CONFLICT);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity("Cannot create docker files !",HttpStatus.CONFLICT);
+        }
 
-        simpleScript = simpleScriptService.createSimpleScript(
-                simpleScriptDto.getGitUrl(),
-                branch,
-                simpleScriptDto.getWebhook(),
-                simpleScriptDto.getTimeout());
+        String result = dockerService.createImage(simpleScript);
 
-        SimpleScriptDto result = simpleScriptConvertor.convertModelToDto(simpleScript);
+        log.trace(result);
 
-        log.trace("createdSimpleScript: result={}", result);
+        simpleScript = simpleScriptService.createSimpleScript(simpleScript);
 
-        return new ResponseEntity(new EmptyJsonResponse(), HttpStatus.OK);
+        SimpleScriptDto dto = simpleScriptConvertor.convertModelToDto(simpleScript);
+
+        log.trace("createdSimpleScript: dto={}", dto);
+
+        return new ResponseEntity("All ok !", HttpStatus.OK);
     }
 /*
     @RequestMapping(value = "students/{studentId}", method = RequestMethod.DELETE)

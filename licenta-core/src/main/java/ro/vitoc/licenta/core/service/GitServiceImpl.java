@@ -12,24 +12,23 @@ import java.nio.file.Paths;
 import java.util.Collections;
 
 @Service
-public class ProjectServiceImpl implements ProjectService {
-    private static final Logger log = LoggerFactory.getLogger(ProjectServiceImpl.class);
-    private static final String gitLocation = "/Git projects/";
+public class GitServiceImpl implements GitService {
+    private static final Logger log = LoggerFactory.getLogger(GitServiceImpl.class);
+    private static final String gitLocation = "\\Git projects\\";
 
     @Override
-    public Boolean cloneGitRepository(String url, String branch) {
+    public Boolean cloneGitRepository(String name,String url, String branch) {
         log.trace("cloneGitRepository: url={},branch={}",url,branch);
         if (!checkGitRepository(url))
             return false;
         try {
-            String repositoryName = getRepositoryName(url);
             Ref branchRef = getBranchRef(url,branch);
             if (branchRef == null)
                 throw new InvalidRefNameException("Branch does not exist");
-            log.trace("cloneGitRepository clone folder: " + System.getenv("APPDATA") + gitLocation + repositoryName);
+            log.trace("cloneGitRepository clone folder: " + getLocation(name));
             Git.cloneRepository()
                     .setURI(url)
-                    .setDirectory(Paths.get(System.getenv("APPDATA") + gitLocation + repositoryName).toFile())
+                    .setDirectory(Paths.get(getLocation(name)).toFile())
                     .setBranchesToClone(Collections.singleton(branchRef.getName()))
                     .setBranch(branchRef.getName())
                     .call();
@@ -75,8 +74,13 @@ public class ProjectServiceImpl implements ProjectService {
         }
     }
 
+    @Override
+    public String getLocation(String repositoryName) {
+        return System.getenv("APPDATA") + gitLocation + repositoryName;
+    }
+/*
     private String getRepositoryName(String url){
         String[] var = url.split(String.valueOf('/'));
         return var[var.length-1];
-    }
+    }*/
 }

@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.vitoc.licenta.core.model.BaseEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 @NoRepositoryBean
 @Transactional

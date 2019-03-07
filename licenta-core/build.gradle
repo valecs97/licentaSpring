@@ -22,4 +22,6 @@ dependencies {
 
     compile group: 'javax.xml.bind', name: 'jaxb-api', version: "$jaxbapiVersion"
     compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '4.8.0.201706111038-r'
+    compile group: 'com.github.docker-java', name: 'docker-java', version: '3.0.14'
+    compile group: 'commons-lang', name:'commons-lang', version:'2.6'
 }

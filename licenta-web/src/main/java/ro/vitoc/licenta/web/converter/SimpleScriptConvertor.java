@@ -16,7 +16,11 @@ public class SimpleScriptConvertor extends BaseConverter<SimpleScript, SimpleScr
                 .gitUrl(dto.getGitUrl())
                 .branch(dto.getBranch())
                 .webhook(dto.getWebhook())
-                .timeout(dto.getTimeout())
+                .name(dto.getName())
+                .lang(dto.getLang())
+                .main(dto.getMain())
+                .req(dto.getReq())
+                .parameters(dto.getParameters())
                 .build();
         return simpleScript;
     }
@@ -27,7 +31,11 @@ public class SimpleScriptConvertor extends BaseConverter<SimpleScript, SimpleScr
                 .gitUrl(simpleScript.getGitUrl())
                 .branch(simpleScript.getBranch())
                 .webhook(simpleScript.getWebhook())
-                .timeout(simpleScript.getTimeout())
+                .name(simpleScript.getName())
+                .main(simpleScript.getMain())
+                .lang(simpleScript.getLang())
+                .req(simpleScript.getReq())
+                .parameters(simpleScript.getParameters())
                 .build();
         dto.setId(simpleScript.getId());
         return dto;
