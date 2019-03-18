@@ -1,9 +1,12 @@
 package ro.vitoc.licenta.core.service;
 
+import com.jcraft.jsch.Session;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.TransportConfigCallback;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRefNameException;
 import org.eclipse.jgit.lib.Ref;
+import org.eclipse.jgit.transport.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,12 @@ import java.util.Collections;
 public class GitServiceImpl implements GitService {
     private static final Logger log = LoggerFactory.getLogger(GitServiceImpl.class);
     private static final String gitLocation = "\\Git projects\\";
+    private final SshSessionFactory sshSessionFactory = new JschConfigSessionFactory() {
+        @Override
+        protected void configure(OpenSshConfig.Host host, Session session ) {
+            // do nothing
+        }
+    };
 
     @Override
     public Boolean cloneGitRepository(String name,String url, String branch) {
@@ -31,6 +40,11 @@ public class GitServiceImpl implements GitService {
                     .setDirectory(Paths.get(getLocation(name)).toFile())
                     .setBranchesToClone(Collections.singleton(branchRef.getName()))
                     .setBranch(branchRef.getName())
+/*                    .setTransportConfigCallback(transport -> {
+                        SshTransport sshTransport = ( SshTransport )transport;
+                        sshTransport.setSshSessionFactory( sshSessionFactory );
+                    })*/
+                    .setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97","Alecs240085"))
                     .call();
         } catch (GitAPIException e) {
             log.trace("Git error : " + e.getMessage());
@@ -46,6 +60,11 @@ public class GitServiceImpl implements GitService {
                     .setHeads(true)
                     .setTags(true)
                     .setRemote(url)
+                    .setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97","Alecs240085"))
+/*                    .setTransportConfigCallback(transport -> {
+                        SshTransport sshTransport = ( SshTransport )transport;
+                        sshTransport.setSshSessionFactory( sshSessionFactory );
+                    })*/
                     .call();
         } catch (GitAPIException e){
             log.trace("Git error : " + e.getMessage());
@@ -63,6 +82,11 @@ public class GitServiceImpl implements GitService {
                     .setHeads(true)
                     .setTags(true)
                     .setRemote(url)
+                    .setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97","Alecs240085"))
+/*                    .setTransportConfigCallback(transport -> {
+                        SshTransport sshTransport = ( SshTransport )transport;
+                        sshTransport.setSshSessionFactory( sshSessionFactory );
+                    })*/
                     .call()
                     .stream()
                     .filter(ref -> ref.getName().contains(branch))

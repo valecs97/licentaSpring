@@ -8,8 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @NamedEntityGraphs({
-        @NamedEntityGraph(name = "baseProjectWithReq",
-                attributeNodes = @NamedAttributeNode(value = "req"))
+        @NamedEntityGraph(name = "baseProjectWithReq")
 })
 
 @MappedSuperclass
@@ -31,5 +30,4 @@ public abstract class BaseProject extends BaseEntity<Long> implements Serializab
     @Column
     @ElementCollection(targetClass=String.class,fetch = FetchType.EAGER)
     private List<String> req;
-    private Integer parameters;
 }

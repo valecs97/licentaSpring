@@ -1,10 +1,8 @@
-package ro.vitoc.licenta.web.dto;
+package ro.vitoc.licenta.core.dto;
 
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.ws.rs.DefaultValue;
 import java.io.Serializable;
 import java.util.List;
 
@@ -13,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class BaseProject extends BaseDto implements Serializable {
+public class BaseProjectDto extends BaseDto implements Serializable {
     private String name;
     private String gitUrl;
     private String branch;

@@ -1,11 +1,13 @@
-package ro.vitoc.licenta.core.service;
+package ro.vitoc.licenta.core.facade;
 
+import ro.vitoc.licenta.core.dto.BaseProjectDto;
+import ro.vitoc.licenta.core.dto.SimpleProjectDto;
 import ro.vitoc.licenta.core.model.BaseProject;
 import ro.vitoc.licenta.core.model.SimpleProject;
 
 import java.io.IOException;
 
-public interface CommonService {
+public interface CommonFacade {
     Integer createDockerFile(BaseProject project) throws IOException;
     Integer createDockerFile(SimpleProject project) throws IOException;
     void createRequirementsFile(BaseProject project) throws IOException;

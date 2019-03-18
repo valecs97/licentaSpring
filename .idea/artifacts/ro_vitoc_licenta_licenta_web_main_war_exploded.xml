@@ -109,6 +109,8 @@
           <element id="library" level="project" name="Gradle: org.scijava:native-lib-loader:2.0.2" />
           <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.21" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-simple:1.7.25" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:2.1.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: redis.clients:jedis:2.9.0" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ro.vitoc.licenta-licenta-web_main/web/Web Gradle : licenta-web-1.0-SNAPSHOT.war" />

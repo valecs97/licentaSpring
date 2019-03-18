@@ -24,7 +24,6 @@ import javax.sql.DataSource;
 @Configuration
 @EnableJpaRepositories({"ro.vitoc.licenta.core.repository"})
 @EnableTransactionManagement
-@EnableCaching
 public class JPAConfig {
 
     @Value("${db.jdbcUrl}")

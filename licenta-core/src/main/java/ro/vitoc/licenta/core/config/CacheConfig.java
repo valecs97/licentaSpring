@@ -4,47 +4,60 @@ import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.CaffeineSpec;
 import com.github.benmanes.caffeine.cache.RemovalCause;
 import com.github.benmanes.caffeine.cache.RemovalListener;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.util.concurrent.TimeUnit;
 
 @Configuration
-public class CacheConfig {
+@EnableCaching
+public class CacheConfig{
+    @Value("${redis.hostname}")
+    private String redisHostName;
+
+    @Value("${redis.port}")
+    private int redisPort;
+
     @Bean
     public CacheManager cacheManager() {
-        String specAsString = "initialCapacity=100,maximumSize=500,expireAfterAccess=5m,recordStats";
-        CaffeineCacheManager cacheManager = new CaffeineCacheManager("AIRCRAFTS", "SECOND_CACHE");
-        cacheManager.setAllowNullValues(false); //can happen if you get a value from a @Cachable that returns null
-        //cacheManager.setCacheSpecification(specAsString);
-        cacheManager.setCaffeineSpec(caffeineSpec());
-        cacheManager.setCaffeine(caffeineCacheBuilder());
-        return cacheManager;
+        RedisCacheManager.RedisCacheManagerBuilder builder =
+                RedisCacheManager.RedisCacheManagerBuilder.fromConnectionFactory(jedisConnectionFactory());
+        return builder.build();
     }
 
-    CaffeineSpec caffeineSpec() {
-        return CaffeineSpec.parse
-                ("initialCapacity=100,maximumSize=500,expireAfterAccess=5m,recordStats");
+    @Bean
+    public JedisConnectionFactory jedisConnectionFactory() {
+        System.out.println(redisHostName + " " + redisPort);
+        RedisStandaloneConfiguration configuration =
+                new RedisStandaloneConfiguration(redisHostName,6379);
+        JedisConnectionFactory res = new JedisConnectionFactory(configuration);
+        return res;
     }
 
+    @Bean
+    public RedisTemplate<String, Object> redisTemplate() {
+        //RedisSerializer genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer();
+        //RedisSerializer stringRedisSerializer = new StringRedisSerializer();
 
-    Caffeine<Object, Object> caffeineCacheBuilder() {
-        return Caffeine.newBuilder()
-                .initialCapacity(100)
-                .maximumSize(150)
-                .expireAfterAccess(5, TimeUnit.MINUTES)
-                .weakKeys()
-                .removalListener(new CustomRemovalListener())
-                .recordStats();
-    }
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
 
-    class CustomRemovalListener implements RemovalListener<Object, Object> {
-        @Override
-        public void onRemoval(Object key, Object value, RemovalCause cause) {
-            System.out.format("removal listerner called with key [%s], cause [%s], evicted [%S]\n",
-                    key, cause.toString(), cause.wasEvicted());
-        }
+        //redisTemplate.setKeySerializer(stringRedisSerializer);
+        //redisTemplate.setHashKeySerializer(stringRedisSerializer);
+        redisTemplate.setConnectionFactory(jedisConnectionFactory());
+
+        return redisTemplate;
     }
 }

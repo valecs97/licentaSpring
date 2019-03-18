@@ -1,7 +1,7 @@
-package ro.vitoc.licenta.web.converter;
+package ro.vitoc.licenta.core.converter;
 
+import ro.vitoc.licenta.core.dto.BaseDto;
 import ro.vitoc.licenta.core.model.BaseEntity;
-import ro.vitoc.licenta.web.dto.BaseDto;
 
 import java.util.Collection;
 import java.util.Set;

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ro.vitoc.licenta.core.model.BaseProject;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +19,9 @@ public class DockerServiceImpl implements DockerService {
     private static final Logger log = LoggerFactory.getLogger(DockerServiceImpl.class);
     private DockerClient dockerClient;
 
-    public void setDockerClient() {
+    @PostConstruct
+    private void setDockerClient() {
+        log.trace("SET");
         DefaultDockerClientConfig.Builder config
                 = DefaultDockerClientConfig
                 .createDefaultConfigBuilder()
@@ -26,6 +29,11 @@ public class DockerServiceImpl implements DockerService {
         dockerClient = DockerClientBuilder
                 .getInstance(config)
                 .build();
+    }
+
+    @Override
+    public void startContainer(String containerId){
+        dockerClient.startContainerCmd(containerId).exec();
     }
 
     @Override
@@ -66,16 +74,28 @@ public class DockerServiceImpl implements DockerService {
     }
 
     @Override
+    public String createContainer(BaseProject project) {
+        return dockerClient.createContainerCmd(project.getName())
+                .withName(project.getName())
+                .exec().getId();
+    }
+
+    @Override
     public String executeCommand(String[] command) throws IOException, InterruptedException {
         log.trace("executeCommand: command={}", Arrays.stream(command).reduce((a,b) -> a + " " + b));
         Process process;
         process = Runtime.getRuntime().exec(command);
         process.waitFor();
         InputStream inputStream = process.getInputStream();
+        InputStream errorStream = process.getErrorStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        BufferedReader errorReader = new BufferedReader(new InputStreamReader(errorStream));
         String line = "";
         String res = "";
         while ((line = reader.readLine()) != null) {
+            res+=line + "\n";
+        }
+        while ((line = errorReader.readLine()) != null) {
             res+=line + "\n";
         }
         return res;

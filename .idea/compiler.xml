@@ -15,10 +15,6 @@
       <module name="catalog-core_test" target="1.8" />
       <module name="catalog-web_main" target="1.8" />
       <module name="catalog-web_test" target="1.8" />
-      <module name="licenta-core_main" target="1.8" />
-      <module name="licenta-core_test" target="1.8" />
-      <module name="licenta-web_main" target="1.8" />
-      <module name="licenta-web_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

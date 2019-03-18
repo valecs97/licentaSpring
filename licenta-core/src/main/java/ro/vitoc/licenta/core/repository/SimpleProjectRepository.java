@@ -2,10 +2,8 @@ package ro.vitoc.licenta.core.repository;
 
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.Query;
-import ro.vitoc.licenta.core.model.SimpleScript;
-
-import java.util.List;
+import ro.vitoc.licenta.core.model.SimpleProject;
 
 
-public interface SimpleScriptRepository extends Repository<SimpleScript, Long> {
+public interface SimpleProjectRepository extends Repository<SimpleProject, Long> {
 }

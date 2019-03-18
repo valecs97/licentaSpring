@@ -24,4 +24,6 @@ dependencies {
     compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '4.8.0.201706111038-r'
     compile group: 'com.github.docker-java', name: 'docker-java', version: '3.0.14'
     compile group: 'commons-lang', name:'commons-lang', version:'2.6'
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+    compile group: 'org.springframework.data', name:'spring-data-redis', version: '2.1.5.RELEASE'
 }

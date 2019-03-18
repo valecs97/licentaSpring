@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"ro.vitoc.licenta.web.controller", "ro.vitoc.licenta.web.converter"})
+@ComponentScan({"ro.vitoc.licenta.web.controller"})
 public class WebConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {

@@ -7,7 +7,7 @@ import ro.vitoc.licenta.core.config.JPAConfig;
 @Configuration
 @ComponentScan({"ro.vitoc.licenta.core"})
 @Import({JPAConfig.class})
-@PropertySources({@PropertySource(value = "classpath:local/db.properties"),
+@PropertySources({@PropertySource(value = "classpath:local/db.properties"),@PropertySource(value = "classpath:local/redis.properties")
 })
 public class AppLocalConfig {
     /**

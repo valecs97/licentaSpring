@@ -1,4 +1,4 @@
-package ro.vitoc.licenta.web.dto;
+package ro.vitoc.licenta.core.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

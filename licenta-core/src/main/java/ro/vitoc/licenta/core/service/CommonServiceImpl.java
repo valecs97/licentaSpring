@@ -1,11 +1,15 @@
 package ro.vitoc.licenta.core.service;
 
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ro.vitoc.licenta.core.model.BaseProject;
+import ro.vitoc.licenta.core.model.SimpleProject;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 @Service
 public class CommonServiceImpl implements CommonService {
@@ -13,6 +17,29 @@ public class CommonServiceImpl implements CommonService {
 
     @Override
     public Integer createDockerFile(BaseProject project) throws IOException {
+        log.trace("createDockerFile: location={},lang={}",project.getLocation(),project.getLang());
+        FileWriter fileWriter = new FileWriter(project.getLocation() + "\\Dockerfile");
+        String language = "FROM ";
+
+        if (project.getLang().contains("python")){
+            if (project.getLang().contains("2.7"))
+                language += "python:2.7-slim\n";
+            else
+                language += "python:3\n";
+            fileWriter.write(language);
+            fileWriter.write("WORKDIR /app\nCOPY . /app\n");
+            if (project.getReq().size()>0)
+                fileWriter.write("RUN pip install --trusted-host pypi.python.org -r requirements.txt\n");
+            fileWriter.write("CMD python " + project.getMain());
+        }
+        else
+            return 1;
+        fileWriter.close();
+        return 0;
+    }
+
+    @Override
+    public Integer createDockerFile(SimpleProject project) throws IOException {
         log.trace("createDockerFile: location={},lang={},parameters={}",project.getLocation(),project.getLang(),project.getParameters());
         FileWriter fileWriter = new FileWriter(project.getLocation() + "\\Dockerfile");
         String language = "FROM ";
@@ -24,7 +51,8 @@ public class CommonServiceImpl implements CommonService {
                 language += "python:3\n";
             fileWriter.write(language);
             fileWriter.write("WORKDIR /app\nCOPY . /app\n");
-            fileWriter.write("RUN pip install --trusted-host pypi.python.org -r requirements.txt\n");
+            if (project.getReq().size()>0)
+                fileWriter.write("RUN pip install --trusted-host pypi.python.org -r requirements.txt\n");
             for (int i=0;i<project.getParameters();i++){
                 fileWriter.write("ENV ARG" + i + " Default" + i +"\n");
             }
@@ -48,5 +76,30 @@ public class CommonServiceImpl implements CommonService {
         fileWriter.close();
     }
 
+    @Override
+    public Boolean preCheckProject(BaseProject project) {
+        log.trace("preCheckProject project={}",project.getName());
+        if (!project.getLang().contains("python"))
+            return false;
+        return true;
+    }
 
+    @Override
+    public Boolean postCheckProject(BaseProject project) {
+        log.trace("postCheckProject project={}",project.getName());
+        if (!new File(project.getLocation() + "\\" + project.getMain()).exists()) {
+            deleteFolder(project.getLocation());
+            return false;
+        }
+        return true;
+    }
+
+    private void deleteFolder(String folder){
+        try {
+            FileUtils.deleteDirectory(new File(folder));
+        } catch (IOException e) {
+            log.trace("Could not delete folder !");
+            e.printStackTrace();
+        }
+    }
 }
