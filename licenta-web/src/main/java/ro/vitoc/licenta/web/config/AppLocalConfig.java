@@ -5,9 +5,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import ro.vitoc.licenta.core.config.JPAConfig;
 
 @Configuration
-@ComponentScan({"ro.vitoc.licenta.core"})
+@ComponentScan({"ro.vitoc.licenta.core", "ro.vitoc.licenta.miscellaneous"})
 @Import({JPAConfig.class})
-@PropertySources({@PropertySource(value = "classpath:local/db.properties"),@PropertySource(value = "classpath:local/redis.properties")
+@PropertySources({@PropertySource(value = "classpath:local/db.properties"),@PropertySource(value = "classpath:local/redis.properties"),@PropertySource(value = "classpath:local/docker.properties")
 })
 public class AppLocalConfig {
     /**
