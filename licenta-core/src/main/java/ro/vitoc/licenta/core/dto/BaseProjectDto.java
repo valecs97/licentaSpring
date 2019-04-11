@@ -18,6 +18,4 @@ public class BaseProjectDto extends BaseDto implements Serializable {
     private String webhook;
     private String lang;
     private String main;
-    private List<String> req;
-    private Integer parameters;
 }

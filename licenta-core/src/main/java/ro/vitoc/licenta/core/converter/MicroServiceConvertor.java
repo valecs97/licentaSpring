@@ -16,7 +16,6 @@ public class MicroServiceConvertor extends BaseConverter<MicroService, MicroServ
                 .name(dto.getName())
                 .lang(dto.getLang())
                 .main(dto.getMain())
-                .req(dto.getReq())
                 .build();
         return microService;
     }
@@ -30,7 +29,6 @@ public class MicroServiceConvertor extends BaseConverter<MicroService, MicroServ
                 .name(microService.getName())
                 .main(microService.getMain())
                 .lang(microService.getLang())
-                .req(microService.getReq())
                 .build();
         dto.setId(microService.getId());
         return dto;

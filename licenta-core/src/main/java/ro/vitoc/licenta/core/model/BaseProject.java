@@ -27,7 +27,7 @@ public abstract class BaseProject extends BaseEntity<Long> implements Serializab
     private String webhook;
     private String lang;
     private String main;
-    @Column
-    @ElementCollection(targetClass=String.class,fetch = FetchType.EAGER)
-    private List<String> req;
+//    @Column
+//    @ElementCollection(targetClass=String.class,fetch = FetchType.EAGER)
+//    private List<String> req;
 }

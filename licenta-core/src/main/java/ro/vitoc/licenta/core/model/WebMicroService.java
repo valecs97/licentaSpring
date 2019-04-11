@@ -1,10 +1,9 @@
 package ro.vitoc.licenta.core.model;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,15 +13,20 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class WebMicroService extends MicroService{
-    Integer port;
-    @ElementCollection(targetClass=ServiceConfiguration.class,fetch = FetchType.EAGER)
+public class WebMicroService extends BaseProject{
+    Integer portIn;
+    Integer portOut;
+    @ManyToOne(targetEntity=ServiceConfiguration.class,fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     ServiceConfiguration configuration;
+    @Value("${serviceconf.replicas}")
+    Integer replicas;
 
     @Builder
-    public WebMicroService(String name, String location, String gitUrl, String branch, String webhook, String lang, String main, List<String> req, String containerId, Integer port, ServiceConfiguration configuration) {
-        super(name, location, gitUrl, branch, webhook, lang, main, req, containerId);
-        this.port = port;
+    public WebMicroService(String name, String location, String gitUrl, String branch, String webhook, String lang, String main, Integer portIn,Integer portOut, ServiceConfiguration configuration, Integer replicas) {
+        super(name, location, gitUrl, branch, webhook, lang, main);
+        this.portIn = portIn;
+        this.portOut = portOut;
         this.configuration = configuration;
+        this.replicas = replicas;
     }
 }

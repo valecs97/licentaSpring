@@ -18,8 +18,7 @@ public class ProcessServiceImpl implements ProcessService {
 
     private String getVMsCommand = "docker-machine ls -f \"{{.Name}} {{.State}} {{.URL}}\"";
 
-    @Override
-    public String executeCommand(String[] command) throws IOException {
+    private String executeCommand(String[] command, Boolean wait) throws IOException {
         Process process;
         try {
             if (command.length == 1)
@@ -30,6 +29,8 @@ public class ProcessServiceImpl implements ProcessService {
             log.trace("executeCommand failed: Execute command failed with error : " + e.getMessage());
             return null;
         }
+        if (!wait)
+            return null;
         try {
             process.waitFor();
         } catch (InterruptedException e) {
@@ -53,8 +54,18 @@ public class ProcessServiceImpl implements ProcessService {
     }
 
     @Override
+    public String executeCommand(String[] command) throws IOException {
+        return executeCommand(command,true);
+    }
+
+    @Override
     public String executeCommand(String command) throws IOException {
         return executeCommand(new String[]{command});
+    }
+
+    @Override
+    public void executeCommandWithoutWait(String command) throws IOException {
+        executeCommand(new String[]{command},false);
     }
 
     @Override

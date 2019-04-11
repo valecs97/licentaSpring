@@ -10,5 +10,5 @@ public interface DockerFacade {
     void startContainer(String containerId);
     String createImage(BaseProject project);
     String runImage(String tag, List<String> args);
-    String executeCommand(String[] command) throws IOException, InterruptedException;
+    String pushImage(BaseProject project);
 }

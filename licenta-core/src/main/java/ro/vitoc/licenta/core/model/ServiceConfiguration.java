@@ -13,13 +13,10 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class ServiceConfiguration{
+public class ServiceConfiguration extends BaseEntity<Long>{
     String image;
-    @Value("${serviceconf.replicas}")
-    Integer replicas;
     @Value("${serviceconf.cpus}")
     Float cpus;
     @Value("${serviceconf.memory}")
     String memory;
-    Integer port;
 }

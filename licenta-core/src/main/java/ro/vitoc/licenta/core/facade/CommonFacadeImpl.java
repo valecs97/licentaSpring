@@ -20,9 +20,9 @@ public class CommonFacadeImpl implements CommonFacade{
     private CommonService commonService;
 
     @Override
-    public Integer createDockerFile(BaseProject project) throws IOException {
+    public Integer createDockerFile(BaseProject project, Boolean web) throws IOException {
         log.trace("createDockerFile dao, projectName={}",project.getName());
-        return commonService.createDockerFile(project);
+        return commonService.createDockerFile(project,web);
     }
 
     @Override

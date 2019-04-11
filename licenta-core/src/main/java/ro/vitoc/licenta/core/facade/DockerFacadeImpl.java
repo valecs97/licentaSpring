@@ -45,8 +45,8 @@ public class DockerFacadeImpl implements DockerFacade{
     }
 
     @Override
-    public String executeCommand(String[] command) throws IOException, InterruptedException {
-        log.trace("executeCommand dao, command={}",command);
-        return dockerService.executeCommand(command);
+    public String pushImage(BaseProject project) {
+        log.trace("pushImage dao, projectName={}",project.getName());
+        return dockerService.pushImage(project);
     }
 }

@@ -63,7 +63,7 @@ public class MicroServiceController {
 
         try {
             commonFacade.createRequirementsFile(microService);
-            switch (commonFacade.createDockerFile(microService)){
+            switch (commonFacade.createDockerFile(microService,false)){
                 case 1:
                     return new ResponseEntity("The programming language specified by you does not exists !",HttpStatus.CONFLICT);
             }
@@ -73,6 +73,8 @@ public class MicroServiceController {
         }
 
         String result = dockerFacade.createImage(microService);
+        log.trace(result);
+        result = dockerFacade.pushImage(microService);
         log.trace(result);
         String containerId = dockerFacade.createContainer(microService);
         dockerFacade.startContainer(containerId);

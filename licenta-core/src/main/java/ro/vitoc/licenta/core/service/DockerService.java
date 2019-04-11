@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface DockerService {
     String createImage(BaseProject project);
+    String pushImage(BaseProject project);
     String runImage(String tag, List<String> args);
     String createContainer(BaseProject project);
     void startContainer(String containerId);
-    String executeCommand(String[] command) throws IOException, InterruptedException;
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import ro.vitoc.licenta.miscellaneous.algorithms.DockerAlgorithms;
 import ro.vitoc.licenta.miscellaneous.preConfig.DockerPreConfig;
 import ro.vitoc.licenta.miscellaneous.preConfig.DockerPreConfigImpl;
 import ro.vitoc.licenta.miscellaneous.service.ProcessService;
@@ -28,7 +29,7 @@ public class DockerPreCheckImpl implements DockerPreCheck {
     private static final Logger log = LoggerFactory.getLogger(DockerPreCheckImpl.class);
     public static CountDownLatch VMStatus = new CountDownLatch(1);
 
-    private DockerPreConfig dockerPreConfig;
+    private DockerAlgorithms dockerAlgorithms;
     private ProcessService processService;
 
     @Value("${docker.defaultVMName}")
@@ -42,8 +43,8 @@ public class DockerPreCheckImpl implements DockerPreCheck {
     private static String startDefaultVM = "docker-machine start";
 
     @Autowired
-    public DockerPreCheckImpl(DockerPreConfig dockerPreConfig, ProcessService processService) {
-        this.dockerPreConfig = dockerPreConfig;
+    public DockerPreCheckImpl(DockerAlgorithms dockerAlgorithms, ProcessService processService) {
+        this.dockerAlgorithms = dockerAlgorithms;
         this.processService = processService;
     }
 
@@ -54,7 +55,13 @@ public class DockerPreCheckImpl implements DockerPreCheck {
             log.trace("Default virtual machine doesn't exists ! Creating one !");
             String res = processService.executeCommand(createDefaultVMWithHyperV + " " + switchName + " " + defaultVMName);
             log.trace(res);
-            dockerPreConfig.createDefaultVM();
+            String fileContent = null;
+            try {
+                fileContent = dockerAlgorithms.createDefaultDockerComposer();
+                dockerAlgorithms.deployComposerFile(fileContent);
+            } catch (IOException | URISyntaxException e) {
+                log.trace("createDefaultDockerComposer failed with error : " + e.getMessage());
+            }
         }else if (Arrays.stream(vms.split("\n")).noneMatch(elem -> elem.split(" ")[0].equals(defaultVMName) && elem.split(" ")[1].equals("Running"))) {
             log.trace("Default virtual machine is not running ! Starting the machine !");
             String res = processService.executeCommand(startDefaultVM + " " + defaultVMName);

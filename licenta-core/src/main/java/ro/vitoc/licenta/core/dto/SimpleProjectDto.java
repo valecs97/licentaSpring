@@ -9,8 +9,11 @@ import java.util.List;
 @Setter
 @ToString
 public class SimpleProjectDto extends BaseProjectDto {
+    private Integer parameters;
+
     @Builder
-    public SimpleProjectDto(String name, String gitUrl, String branch, String webhook, String lang, String main, List<String> req, Integer parameters) {
-        super(name, gitUrl, branch, webhook, lang, main, req, parameters);
+    public SimpleProjectDto(String name, String gitUrl, String branch, String webhook, String lang, String main, Integer parameters) {
+        super(name, gitUrl, branch, webhook, lang, main);
+        this.parameters = parameters;
     }
 }

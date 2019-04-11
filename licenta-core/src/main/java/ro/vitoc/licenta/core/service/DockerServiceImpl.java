@@ -6,8 +6,11 @@ import com.github.dockerjava.core.DockerClientBuilder;
 import com.github.dockerjava.core.command.BuildImageResultCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ro.vitoc.licenta.core.model.BaseProject;
+import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
@@ -18,6 +21,15 @@ import java.util.concurrent.TimeUnit;
 public class DockerServiceImpl implements DockerService {
     private static final Logger log = LoggerFactory.getLogger(DockerServiceImpl.class);
     private DockerClient dockerClient;
+
+    @Autowired
+    private ProcessService processService;
+
+    @Value("${docker.username}")
+    private String dockerUser;
+
+    @Value("${docker.password}")
+    private String dockerPass;
 
     @PostConstruct
     private void setDockerClient() {
@@ -32,13 +44,13 @@ public class DockerServiceImpl implements DockerService {
     }
 
     @Override
-    public void startContainer(String containerId){
+    public void startContainer(String containerId) {
         dockerClient.startContainerCmd(containerId).exec();
     }
 
     @Override
     public String createImage(BaseProject project) {
-        log.trace("createImage: name={},location={}",project.getName(),project.getLocation());
+        log.trace("createImage: name={},location={}", project.getName(), project.getLocation());
         /*setDockerClient();
         Set<String> set = new TreeSet<>();
         set.add(project.getName());
@@ -48,26 +60,40 @@ public class DockerServiceImpl implements DockerService {
                 .exec(new BuildImageResultCallback())
                 .awaitImageId(60, TimeUnit.SECONDS);*/
         try {
-            return executeCommand(new String[]{"docker","build","--tag="+project.getName(),project.getLocation()});
-        } catch (IOException | InterruptedException e) {
+            return processService.executeCommand(new String[]{"docker", "build", "--tag=" + project.getName(), project.getLocation()});
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
 
     @Override
-    public String runImage(String tag,List<String> args) {
-        log.trace("runImage: tag={},args={}",tag,args);
+    public String pushImage(BaseProject project) {
+        log.trace("pushImage: name={},location={}", project.getName(), project.getLocation());
+        try {
+            String newTag = dockerUser + "/" + project.getName();
+            log.trace(processService.executeCommand(new String[]{"docker","tag",project.getName(),newTag}));
+            log.trace(processService.executeCommand(new String[]{"docker", "push", newTag}));
+            return newTag;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public String runImage(String tag, List<String> args) {
+        log.trace("runImage: tag={},args={}", tag, args);
         List<String> command = new ArrayList<>();
-        command.addAll(Arrays.asList("docker","run"));
-        for (int i=0;i<args.size();i++){
+        command.addAll(Arrays.asList("docker", "run"));
+        for (int i = 0; i < args.size(); i++) {
             command.add("-e");
-            command.add("ARG" + i + "=" + args.get(i).replace(" ","%20"));
+            command.add("ARG" + i + "=" + args.get(i).replace(" ", "%20"));
         }
         command.add(tag);
         try {
-            return executeCommand(command.toArray(new String[command.size()]));
-        } catch (IOException | InterruptedException e) {
+            return processService.executeCommand(command.toArray(new String[command.size()]));
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
@@ -78,26 +104,5 @@ public class DockerServiceImpl implements DockerService {
         return dockerClient.createContainerCmd(project.getName())
                 .withName(project.getName())
                 .exec().getId();
-    }
-
-    @Override
-    public String executeCommand(String[] command) throws IOException, InterruptedException {
-        log.trace("executeCommand: command={}", Arrays.stream(command).reduce((a,b) -> a + " " + b));
-        Process process;
-        process = Runtime.getRuntime().exec(command);
-        process.waitFor();
-        InputStream inputStream = process.getInputStream();
-        InputStream errorStream = process.getErrorStream();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        BufferedReader errorReader = new BufferedReader(new InputStreamReader(errorStream));
-        String line = "";
-        String res = "";
-        while ((line = reader.readLine()) != null) {
-            res+=line + "\n";
-        }
-        while ((line = errorReader.readLine()) != null) {
-            res+=line + "\n";
-        }
-        return res;
     }
 }

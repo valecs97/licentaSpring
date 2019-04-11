@@ -20,5 +20,3 @@ services:
         constraints: [node.role == manager]
     networks:
     - webnet
-networks:
-  webnet:

@@ -8,7 +8,7 @@ import ro.vitoc.licenta.core.model.SimpleProject;
 import java.io.IOException;
 
 public interface CommonFacade {
-    Integer createDockerFile(BaseProject project) throws IOException;
+    Integer createDockerFile(BaseProject project, Boolean web) throws IOException;
     Integer createDockerFile(SimpleProject project) throws IOException;
     void createRequirementsFile(BaseProject project) throws IOException;
     Boolean preCheckProject(BaseProject project);
