@@ -18,6 +18,7 @@ import ro.vitoc.licenta.core.facade.WebMicroServiceFacade;
 import ro.vitoc.licenta.core.model.WebMicroService;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 public class WebMicroServiceController {
@@ -35,6 +36,17 @@ public class WebMicroServiceController {
         this.commonFacade = commonFacade;
         this.webMicroServiceFacade = webMicroServiceFacade;
         this.webMicroServiceConvertor = webMicroServiceConvertor;
+    }
+
+    @RequestMapping(value = "/webMicroServices", method = RequestMethod.GET)
+    public List<WebMicroServiceDto> getWebMicroServices() {
+        log.trace("getWebMicroServices");
+
+        List<WebMicroServiceDto> webMicroService = webMicroServiceFacade.findAll();
+
+        log.trace("webMicroServices: webMicroService={}", webMicroService);
+
+        return webMicroService;
     }
 
     @RequestMapping(value = "/webMicroService", method = RequestMethod.POST)
