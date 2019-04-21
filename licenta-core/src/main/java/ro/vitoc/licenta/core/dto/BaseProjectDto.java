@@ -15,7 +15,6 @@ public class BaseProjectDto extends BaseDto implements Serializable {
     private String name;
     private String gitUrl;
     private String branch;
-    private String webhook;
     private String lang;
     private String main;
 }

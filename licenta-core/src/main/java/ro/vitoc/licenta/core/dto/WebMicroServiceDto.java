@@ -19,8 +19,8 @@ public class WebMicroServiceDto extends BaseProjectDto {
     Integer replicas;
 
     @Builder
-    public WebMicroServiceDto(String name, String gitUrl, String branch, String webhook, String lang, String main, Integer portIn, Integer portOut, ServiceConfigurationDto configuration, Integer replicas) {
-        super(name, gitUrl, branch, webhook, lang, main);
+    public WebMicroServiceDto(String name, String gitUrl, String branch, String lang, String main, Integer portIn, Integer portOut, ServiceConfigurationDto configuration, Integer replicas) {
+        super(name, gitUrl, branch, lang, main);
         this.portIn = portIn;
         this.portOut = portOut;
         if (configuration != null)
@@ -30,8 +30,8 @@ public class WebMicroServiceDto extends BaseProjectDto {
         this.replicas = replicas;
     }
 
-    public WebMicroServiceDto(String name, String gitUrl, String branch, String webhook, String lang, String main, Integer port) {
-        super(name, gitUrl, branch, webhook, lang, main);
+    public WebMicroServiceDto(String name, String gitUrl, String branch, String lang, String main, Integer port) {
+        super(name, gitUrl, branch, lang, main);
         this.portIn = portIn;
         this.portOut = portOut;
         configuration = new ServiceConfigurationDto();

@@ -16,8 +16,8 @@ public class MicroService extends BaseProject{
     String containerId;
 
     @Builder
-    public MicroService(String name, String location, String gitUrl, String branch, String webhook, String lang, String main, String containerId) {
-        super(name, location, gitUrl, branch, webhook, lang, main);
+    public MicroService(String name, String location, String gitUrl, String branch, String lang, String main, String containerId) {
+        super(name, location, gitUrl, branch, lang, main);
         this.containerId = containerId;
     }
 }

@@ -24,7 +24,6 @@ public abstract class BaseProject extends BaseEntity<Long> implements Serializab
     private String gitUrl;
     private String branch;
     @DefaultValue("null")
-    private String webhook;
     private String lang;
     private String main;
 //    @Column

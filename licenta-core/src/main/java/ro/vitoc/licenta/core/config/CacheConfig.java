@@ -55,7 +55,7 @@ public class CacheConfig {
                     DockerPreCheckImpl.VMStatus.await();
                     redisHostName = ProcessServiceImpl.getDefaultVMInfoGlobal(defaultVMName)
                             .split(" ")[2].split("//")[1].split(":")[0];
-                    log.trace(redisHostName);
+
                 } catch (InterruptedException e) {
                     log.trace("GetDefaultVMHostName thread intrerrupted");
                 }

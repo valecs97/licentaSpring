@@ -19,8 +19,8 @@ import java.util.List;
 public class SimpleProject extends BaseProject implements Serializable {
     private Integer parameters;
     @Builder
-    public SimpleProject(String name, String location, String gitUrl, String branch, String webhook, String lang, String main, Integer parameters) {
-        super(name, location, gitUrl, branch, webhook, lang, main);
+    public SimpleProject(String name, String location, String gitUrl, String branch, String lang, String main, Integer parameters) {
+        super(name, location, gitUrl, branch, lang, main);
         this.parameters = parameters;
     }
 }
