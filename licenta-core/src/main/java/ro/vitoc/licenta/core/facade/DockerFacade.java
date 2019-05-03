@@ -11,4 +11,5 @@ public interface DockerFacade {
     String createImage(BaseProject project);
     String runImage(String tag, List<String> args);
     String pushImage(BaseProject project);
+    void redeployAll();
 }

@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import ro.vitoc.licenta.core.model.MicroService;
 import ro.vitoc.licenta.core.model.WebMicroService;
 import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 
@@ -41,10 +42,10 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
     @Override
     public String createDefaultDockerComposer() throws IOException, URISyntaxException {
         log.trace("Creating docker DEFAULT composer file");
-        return createDefaultDockerComposer(null);
+        return createDefaultDockerComposer(null,null);
     }
 
-    public String createDefaultDockerComposer(List<WebMicroService> configs) throws IOException, URISyntaxException {
+    public String createDefaultDockerComposer(List<WebMicroService> configs, List<MicroService> configs2) throws IOException, URISyntaxException {
         log.trace("Creating docker composer file");
         File file = Paths.get(getClass().getClassLoader().getResource(defaultDockerComposerFile).toURI()).toFile();
         FileInputStream fis = null;
@@ -68,6 +69,20 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
                 res += "\\t\\tports:\\n";
                 res += "\\t\\t\\t- \\\"" + config.getPortOut() + ":" + config.getPortIn() + "\\\"\\n";
             }
+        if (configs2 != null) {
+            for (MicroService config : configs2) {
+                res += "\\t" + config.getName() + ":\\n";
+                res += "\\t\\timage: " + config.getConfiguration().getImage() + "\\n";
+                res += "\\t\\tdeploy:\\n";
+                res += "\\t\\t\\treplicas: 1\\n";
+                res += "\\t\\t\\tresources: \\n";
+                res += "\\t\\t\\t\\tlimits:\\n";
+                res += "\\t\\t\\t\\t\\tcpus: \\\"" + config.getConfiguration().getCpus() + "\\\"\\n";
+                res += "\\t\\t\\t\\t\\tmemory: " + config.getConfiguration().getMemory() + "\\n";
+                res += "\\t\\t\\trestart_policy:\\n";
+                res += "\\t\\t\\t\\tcondition: on-failure\\n";
+            }
+        }
         res += "networks:\\n";
         res += "\\twebnet:\\n";
         return res.replace("\\r\\n", "\\n").replace("\\t", "  ");
@@ -89,9 +104,18 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
     }
 
     @Override
-    public void rebalanceStack(List<WebMicroService> configs) {
+    public void rebalanceStack(List<WebMicroService> configs, List<MicroService> configs2) {
         log.trace("rebalanceStack , configs = {}", configs);
         for (WebMicroService config : configs) {
+            log.trace("Rebalance webmicroservice " + config.getName());
+            try {
+                processService.executeCommandWithoutWait(rebalanceService + " " + swarmName + "_" + config.getName());
+            } catch (IOException e) {
+                log.trace("rebalanceStack failed with error " + e.getMessage());
+            }
+        }
+
+        for (MicroService config : configs2) {
             log.trace("Rebalance microservice " + config.getName());
             try {
                 processService.executeCommandWithoutWait(rebalanceService + " " + swarmName + "_" + config.getName());

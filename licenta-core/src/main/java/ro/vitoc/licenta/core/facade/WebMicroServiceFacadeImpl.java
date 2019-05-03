@@ -40,9 +40,5 @@ public class WebMicroServiceFacadeImpl implements WebMicroServiceFacade{
         return webMicroServiceConvertor.convertModelToDto(webMicroServiceService.createWebMicroService(webMicroService));
     }
 
-    @Override
-    public void redeployAll() {
-        log.trace("redeployAll webMicroService dao");
-        webMicroServiceService.redeployAll();
-    }
+
 }

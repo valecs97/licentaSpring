@@ -66,7 +66,7 @@ public class SimpleProjectController {
         simpleProject.setLocation(gitFacade.getLocation(simpleProject.getName()));
 
         if (!commonFacade.preCheckProject(simpleProject))
-            return new ResponseEntity("Programming language not supported or cointainer name already exists !",HttpStatus.CONFLICT);
+            return new ResponseEntity("Programming language not supported or container name already exists !",HttpStatus.CONFLICT);
 
         if (!gitFacade.cloneGitRepository(simpleProjectDto.getName(), simpleProjectDto.getGitUrl(), branch))
             return new ResponseEntity("Repository does not exists ! Or another error.",HttpStatus.NOT_FOUND);

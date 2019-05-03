@@ -16,6 +16,7 @@ import ro.vitoc.licenta.core.facade.DockerFacade;
 import ro.vitoc.licenta.core.facade.GitFacade;
 import ro.vitoc.licenta.core.facade.WebMicroServiceFacade;
 import ro.vitoc.licenta.core.model.WebMicroService;
+import ro.vitoc.licenta.web.preConfig.DockerPreConfig;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,14 +29,16 @@ public class WebMicroServiceController {
     private CommonFacade commonFacade;
     private WebMicroServiceFacade webMicroServiceFacade;
     private WebMicroServiceConvertor webMicroServiceConvertor;
+    private DockerPreConfig dockerPreConfig;
 
     @Autowired
-    public WebMicroServiceController(GitFacade gitFacade, DockerFacade dockerFacade, CommonFacade commonFacade, WebMicroServiceFacade webMicroServiceFacade, WebMicroServiceConvertor webMicroServiceConvertor) {
+    public WebMicroServiceController(GitFacade gitFacade, DockerFacade dockerFacade, CommonFacade commonFacade, WebMicroServiceFacade webMicroServiceFacade, WebMicroServiceConvertor webMicroServiceConvertor, DockerPreConfig dockerPreConfig) {
         this.gitFacade = gitFacade;
         this.dockerFacade = dockerFacade;
         this.commonFacade = commonFacade;
         this.webMicroServiceFacade = webMicroServiceFacade;
         this.webMicroServiceConvertor = webMicroServiceConvertor;
+        this.dockerPreConfig = dockerPreConfig;
     }
 
     @RequestMapping(value = "/webMicroServices", method = RequestMethod.GET)
@@ -88,7 +91,9 @@ public class WebMicroServiceController {
 
         log.trace("createdSimpleScript: dto={}", dto);
 
-        webMicroServiceFacade.redeployAll();
+        dockerFacade.redeployAll();
+
+        dockerPreConfig.attachLogToWebSocket(webMicroServiceConvertor.convertDtoToModel(dto));
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }

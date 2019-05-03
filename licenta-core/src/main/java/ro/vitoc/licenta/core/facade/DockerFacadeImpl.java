@@ -49,4 +49,10 @@ public class DockerFacadeImpl implements DockerFacade{
         log.trace("pushImage dao, projectName={}",project.getName());
         return dockerService.pushImage(project);
     }
+
+    @Override
+    public void redeployAll() {
+        log.trace("redeployAll dockerService dao");
+        dockerService.redeployAll();
+    }
 }

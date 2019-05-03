@@ -21,8 +21,10 @@ import ro.vitoc.licenta.core.model.SimpleProject;
 import ro.vitoc.licenta.core.service.CommonService;
 import ro.vitoc.licenta.core.service.DockerService;
 import ro.vitoc.licenta.core.service.GitService;
+import ro.vitoc.licenta.web.preConfig.DockerPreConfig;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 public class MicroServiceController {
@@ -32,14 +34,27 @@ public class MicroServiceController {
     private CommonFacade commonFacade;
     private MicroServiceFacade microServiceFacade;
     private MicroServiceConvertor microServiceConvertor;
+    private DockerPreConfig dockerPreConfig;
 
     @Autowired
-    public MicroServiceController(GitFacade gitFacade, DockerFacade dockerFacade, CommonFacade commonFacade, MicroServiceFacade microServiceFacade, MicroServiceConvertor microServiceConvertor) {
+    public MicroServiceController(GitFacade gitFacade, DockerFacade dockerFacade, CommonFacade commonFacade, MicroServiceFacade microServiceFacade, MicroServiceConvertor microServiceConvertor, DockerPreConfig dockerPreConfig) {
         this.gitFacade = gitFacade;
         this.dockerFacade = dockerFacade;
         this.commonFacade = commonFacade;
         this.microServiceFacade = microServiceFacade;
         this.microServiceConvertor = microServiceConvertor;
+        this.dockerPreConfig = dockerPreConfig;
+    }
+
+    @RequestMapping(value = "/microServices", method = RequestMethod.GET)
+    public List<MicroServiceDto> getWebMicroServices() {
+        log.trace("getWebMicroServices");
+
+        List<MicroServiceDto> microServiceDtos = microServiceFacade.findAll();
+
+        log.trace("getWebMicroServices: microServiceDtos={}", microServiceDtos);
+
+        return microServiceDtos;
     }
 
     @RequestMapping(value = "/microService", method = RequestMethod.POST)
@@ -76,14 +91,14 @@ public class MicroServiceController {
         log.trace(result);
         result = dockerFacade.pushImage(microService);
         log.trace(result);
-        String containerId = dockerFacade.createContainer(microService);
-        dockerFacade.startContainer(containerId);
 
-
-
-        MicroServiceDto dto = microServiceFacade.createMicroService(microServiceDto,branch,gitFacade.getLocation(microServiceDto.getName()),containerId);
+        MicroServiceDto dto = microServiceFacade.createMicroService(microServiceDto,branch,gitFacade.getLocation(microServiceDto.getName()));
 
         log.trace("createdSimpleScript: dto={}", dto);
+
+        dockerFacade.redeployAll();
+
+        dockerPreConfig.attachLogToWebSocket(microServiceConvertor.convertDtoToModel(dto));
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }

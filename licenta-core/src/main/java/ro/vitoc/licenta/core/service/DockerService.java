@@ -12,4 +12,5 @@ public interface DockerService {
     String runImage(String tag, List<String> args);
     String createContainer(BaseProject project);
     void startContainer(String containerId);
+    void redeployAll();
 }

@@ -8,6 +8,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -40,6 +41,10 @@ public class RedisUtil<T> {
 
     public T find(String id, String hash){
         return (T) hashOperations.get(hash,id);
+    }
+
+    public List<T> findALL(String hash){
+        return (List<T>) hashOperations.values(hash);
     }
 
     /*private RedisTemplate<String,T> redisTemplate;

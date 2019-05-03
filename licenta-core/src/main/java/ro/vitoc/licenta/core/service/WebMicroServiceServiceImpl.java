@@ -20,14 +20,9 @@ public class WebMicroServiceServiceImpl implements WebMicroServiceService {
     @Value("${docker.username}")
     private String dockerUser;
 
-    private WebMicroServiceRepository webMicroServiceRepository;
-    private DockerAlgorithms dockerAlgorithms;
-
     @Autowired
-    public WebMicroServiceServiceImpl(WebMicroServiceRepository webMicroServiceRepository, DockerAlgorithms dockerAlgorithms) {
-        this.webMicroServiceRepository = webMicroServiceRepository;
-        this.dockerAlgorithms = dockerAlgorithms;
-    }
+    private WebMicroServiceRepository webMicroServiceRepository;
+
 
     @Override
     public List<WebMicroService> findAll() {
@@ -52,22 +47,5 @@ public class WebMicroServiceServiceImpl implements WebMicroServiceService {
         log.trace("after createWebMicroService: webMicroService={}", webMicroService);
 
         return webMicroService;
-    }
-
-    @Override
-    public void redeployAll() {
-        log.trace("redeployAll webMicroServices--- method entered");
-
-        List<WebMicroService> webMicroServices = findAll();
-
-        String fileContent = null;
-        try {
-            fileContent = dockerAlgorithms.createDefaultDockerComposer(webMicroServices);
-            dockerAlgorithms.deployComposerFile(fileContent);
-        } catch (IOException | URISyntaxException e) {
-            log.trace("createDefaultDockerComposer failed with error : " + e.getMessage());
-        }
-
-        dockerAlgorithms.rebalanceStack(webMicroServices);
     }
 }

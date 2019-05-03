@@ -2,7 +2,10 @@ package ro.vitoc.licenta.core.model;
 
 import lombok.*;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import java.util.List;
 
 @Entity
@@ -13,11 +16,12 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class MicroService extends BaseProject{
-    String containerId;
+    @ManyToOne(targetEntity=ServiceConfiguration.class,fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    ServiceConfiguration configuration;
 
     @Builder
-    public MicroService(String name, String location, String gitUrl, String branch, String lang, String main, String containerId) {
+    public MicroService(String name, String location, String gitUrl, String branch, String lang, String main, ServiceConfiguration configuration) {
         super(name, location, gitUrl, branch, lang, main);
-        this.containerId = containerId;
+        this.configuration = configuration;
     }
 }

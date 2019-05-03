@@ -1,9 +1,11 @@
 package ro.vitoc.licenta.core.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import ro.vitoc.licenta.core.config.RedisUtil;
 import ro.vitoc.licenta.core.model.WebMicroService;
 
+@Configuration
 public class WebMicroServiceCacheManagerImpl implements CacheManager<WebMicroService> {
     public static final String TABLE_SIMPLEPROJECT = "TABLE_MICROSERVICE";
     public static final String SIMPLEPROJECT = "MICROSERVICE_";

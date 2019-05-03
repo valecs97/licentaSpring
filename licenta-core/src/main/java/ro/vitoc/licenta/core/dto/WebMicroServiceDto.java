@@ -30,7 +30,7 @@ public class WebMicroServiceDto extends BaseProjectDto {
         this.replicas = replicas;
     }
 
-    public WebMicroServiceDto(String name, String gitUrl, String branch, String lang, String main, Integer port) {
+    public WebMicroServiceDto(String name, String gitUrl, String branch, String lang, String main, Integer portIn, Integer portOut) {
         super(name, gitUrl, branch, lang, main);
         this.portIn = portIn;
         this.portOut = portOut;

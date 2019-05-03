@@ -4,25 +4,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import ro.vitoc.licenta.core.model.WebMicroService;
+import ro.vitoc.licenta.core.repository.MicroServiceRepository;
+import ro.vitoc.licenta.core.repository.WebMicroServiceRepository;
 import ro.vitoc.licenta.miscellaneous.algorithms.DockerAlgorithms;
-import ro.vitoc.licenta.miscellaneous.preConfig.DockerPreConfig;
-import ro.vitoc.licenta.miscellaneous.preConfig.DockerPreConfigImpl;
 import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 
 import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.locks.ReentrantLock;
 
 @Component
 public class DockerPreCheckImpl implements DockerPreCheck {
@@ -70,4 +64,6 @@ public class DockerPreCheckImpl implements DockerPreCheck {
         log.trace("Default virtual machine up and running !");
         VMStatus.countDown();
     }
+
+
 }

@@ -25,5 +25,7 @@ dependencies {
     compile group: 'com.github.docker-java', name: 'docker-java', version: '3.0.14'
     compile group: 'commons-lang', name:'commons-lang', version:'2.6'
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
-    compile group: 'org.springframework.data', name:'spring-data-redis', version: '2.1.5.RELEASE'
+    compile group: 'org.springframework.data', name:'spring-data-redis', version: "$springDataVersion"
+
+    compile group: 'org.zeroturnaround', name: 'zt-exec', version: '1.10'
 }

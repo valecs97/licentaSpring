@@ -12,11 +12,10 @@ dependencies {
 
     compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '4.8.0.201706111038-r'
 
+    compile group: 'org.springframework', name: 'spring-websocket', version: "$springVersion"
 
+    compile group: 'org.springframework', name: 'spring-messaging', version: "$springVersion"
 
-
-
-
-
+    compile group: 'org.zeroturnaround', name: 'zt-exec', version: '1.10'
 }
 

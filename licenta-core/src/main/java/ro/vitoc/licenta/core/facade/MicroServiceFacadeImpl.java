@@ -34,12 +34,11 @@ public class MicroServiceFacadeImpl implements MicroServiceFacade{
     }
 
     @Override
-    public MicroServiceDto createMicroService(MicroServiceDto microServiceDto, String branch, String location,String containerId) {
+    public MicroServiceDto createMicroService(MicroServiceDto microServiceDto, String branch, String location) {
         log.trace("createMicroService dao, microServiceDto={}",microServiceDto);
         MicroService microService = microServiceConvertor.convertDtoToModel(microServiceDto);
         microService.setBranch(branch);
         microService.setLocation(location);
-        microService.setContainerId(containerId);
         return microServiceConvertor.convertModelToDto(microServiceService.createMicroService(microService));
     }
 }

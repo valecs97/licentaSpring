@@ -3,27 +3,41 @@ package ro.vitoc.licenta.core.service;
 import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.core.DefaultDockerClientConfig;
 import com.github.dockerjava.core.DockerClientBuilder;
-import com.github.dockerjava.core.command.BuildImageResultCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ro.vitoc.licenta.core.model.BaseProject;
+import ro.vitoc.licenta.core.model.MicroService;
+import ro.vitoc.licenta.core.model.WebMicroService;
+import ro.vitoc.licenta.core.repository.MicroServiceRepository;
+import ro.vitoc.licenta.core.repository.WebMicroServiceRepository;
+import ro.vitoc.licenta.miscellaneous.algorithms.DockerAlgorithms;
 import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
+import java.net.URISyntaxException;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class DockerServiceImpl implements DockerService {
     private static final Logger log = LoggerFactory.getLogger(DockerServiceImpl.class);
     private DockerClient dockerClient;
 
-    @Autowired
     private ProcessService processService;
+    private WebMicroServiceRepository webMicroServiceRepository;
+    private MicroServiceRepository microServiceRepository;
+    private DockerAlgorithms dockerAlgorithms;
+
+    @Autowired
+    public DockerServiceImpl(ProcessService processService, WebMicroServiceRepository webMicroServiceRepository, MicroServiceRepository microServiceRepository, DockerAlgorithms dockerAlgorithms) {
+        this.processService = processService;
+        this.webMicroServiceRepository = webMicroServiceRepository;
+        this.microServiceRepository = microServiceRepository;
+        this.dockerAlgorithms = dockerAlgorithms;
+    }
 
     @Value("${docker.username}")
     private String dockerUser;
@@ -104,5 +118,24 @@ public class DockerServiceImpl implements DockerService {
         return dockerClient.createContainerCmd(project.getName())
                 .withName(project.getName())
                 .exec().getId();
+    }
+
+
+    @Override
+    public void redeployAll() {
+        log.trace("redeployAll dockerService--- method entered");
+
+        List<WebMicroService> webMicroServices = webMicroServiceRepository.findAll();
+        List<MicroService> microServices = microServiceRepository.findAll();
+
+        String fileContent = null;
+        try {
+            fileContent = dockerAlgorithms.createDefaultDockerComposer(webMicroServices,microServices);
+            dockerAlgorithms.deployComposerFile(fileContent);
+        } catch (IOException | URISyntaxException e) {
+            log.trace("createDefaultDockerComposer failed with error : " + e.getMessage());
+        }
+
+        dockerAlgorithms.rebalanceStack(webMicroServices,microServices);
     }
 }
