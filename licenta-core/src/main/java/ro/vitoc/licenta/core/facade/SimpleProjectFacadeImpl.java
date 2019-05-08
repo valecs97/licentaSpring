@@ -3,6 +3,7 @@ package ro.vitoc.licenta.core.facade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Component;
 import ro.vitoc.licenta.core.converter.SimpleScriptConvertor;
 import ro.vitoc.licenta.core.dto.SimpleProjectDto;
@@ -33,17 +34,44 @@ public class SimpleProjectFacadeImpl implements SimpleProjectFacade{
     }
 
     @Override
+    public SimpleProjectDto find(Example<SimpleProject> example) {
+        log.trace("find simple project dao, example={}",example.getProbe());
+        SimpleProject result = simpleProjectService.find(example);
+        return result != null ? simpleScriptConvertor.convertModelToDto(result) : null;
+    }
+
+    @Override
+    public SimpleProjectDto findByUrlAndBranch(String url, String branch) {
+        log.trace("findByUrlAndBranch simple project dao, url={},branch={}",url,branch);
+        SimpleProject result = simpleProjectService.findByUrlAndBranch(url,branch);
+        return result != null ? simpleScriptConvertor.convertModelToDto(result) : null;
+    }
+
+    @Override
     public SimpleProjectDto createProjectScript(SimpleProjectDto simpleProjectdto,String branch, String location) {
-        log.trace("createProjectScript dao, simpleProjectDTO={}",simpleProjectdto);
+        log.trace("createUpdateProjectScript dao, simpleProjectDTO={}",simpleProjectdto);
         SimpleProject simpleProject = simpleScriptConvertor.convertDtoToModel(simpleProjectdto);
         simpleProject.setBranch(branch);
         simpleProject.setLocation(location);
-        return simpleScriptConvertor.convertModelToDto(simpleProjectService.createProjectScript(simpleProject));
+        return simpleScriptConvertor.convertModelToDto(simpleProjectService.createUpdateProjectScript(simpleProject));
+    }
+
+    @Override
+    public SimpleProjectDto update(SimpleProjectDto simpleProjectDto) {
+        log.trace("updateProject dao, simpleProjectDTO={}",simpleProjectDto);
+        SimpleProject oldProject = simpleProjectService.find(Example.of(SimpleProject.builder().name(simpleProjectDto.getName()).build()));
+        SimpleProject newProject = simpleScriptConvertor.convertDtoToModel(simpleProjectDto);
+        log.trace("updateProject dao oldProject={}, newProject={}",oldProject,newProject);
+        newProject.setBranch(oldProject.getBranch());
+        newProject.setLocation(oldProject.getLocation());
+        newProject.setId(oldProject.getId());
+        return simpleScriptConvertor.convertModelToDto(simpleProjectService.createUpdateProjectScript(newProject));
     }
 
     @Override
     public SimpleProject findSimpleProjectByName(String simpleProject) {
         log.trace("findSimpleProjectByName dao");
-        return simpleProjectService.findSimpleProjectByName(simpleProject);
+        SimpleProject result =  simpleProjectService.find(Example.of(SimpleProject.builder().name(simpleProject).build()));
+        return result;
     }
 }

@@ -111,7 +111,8 @@ public class CommonServiceImpl implements CommonService {
         return true;
     }
 
-    private void deleteFolder(String folder) {
+    @Override
+    public void deleteFolder(String folder) {
         try {
             FileUtils.deleteDirectory(new File(folder));
         } catch (IOException e) {

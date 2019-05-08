@@ -10,7 +10,6 @@ import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
 import org.springframework.messaging.simp.stomp.StompSessionHandler;
 import org.springframework.stereotype.Component;
-
 import org.springframework.web.socket.client.WebSocketClient;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
@@ -18,23 +17,18 @@ import org.springframework.web.socket.sockjs.client.SockJsClient;
 import org.springframework.web.socket.sockjs.client.Transport;
 import org.springframework.web.socket.sockjs.client.WebSocketTransport;
 import org.zeroturnaround.exec.ProcessExecutor;
-import org.zeroturnaround.exec.*;
 import ro.vitoc.licenta.core.dto.LogDto;
 import ro.vitoc.licenta.core.model.BaseProject;
 import ro.vitoc.licenta.core.model.Log;
-import ro.vitoc.licenta.core.model.WebMicroService;
 import ro.vitoc.licenta.core.service.MicroServiceService;
 import ro.vitoc.licenta.core.service.WebMicroServiceService;
 import ro.vitoc.licenta.miscellaneous.service.ProcessService;
-import ro.vitoc.licenta.web.controller.LogController;
-import sun.rmi.log.LogOutputStream;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.TimeoutException;
 
 @Component
@@ -46,7 +40,6 @@ public class DockerPreConfigImpl implements DockerPreConfig {
     private MicroServiceService microServiceService;
     private WebMicroServiceService webMicroServiceService;
     private ProcessService processService;
-    private LogController logController;
 
     @Value("${docker.defaultVMName}")
     private String defaultVMName;
@@ -55,11 +48,10 @@ public class DockerPreConfigImpl implements DockerPreConfig {
     private String swarmName;
 
     @Autowired
-    public DockerPreConfigImpl(MicroServiceService microServiceService, WebMicroServiceService webMicroServiceService, ProcessService processService, LogController logController) {
+    public DockerPreConfigImpl(MicroServiceService microServiceService, WebMicroServiceService webMicroServiceService, ProcessService processService) {
         this.microServiceService = microServiceService;
         this.webMicroServiceService = webMicroServiceService;
         this.processService = processService;
-        this.logController = logController;
     }
 
     @PostConstruct
@@ -73,7 +65,7 @@ public class DockerPreConfigImpl implements DockerPreConfig {
     public void attachLogToWebSocket(BaseProject project) {
         LogOutputRedirect runnable = new LogOutputRedirect(project);
         Thread thread = new Thread(runnable);
-        thread.start();
+        //thread.start();
     }
 
     private class LogOutputRedirect implements Runnable {

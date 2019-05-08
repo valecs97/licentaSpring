@@ -18,7 +18,9 @@ public class SimpleScriptConvertor extends BaseConverter<SimpleProject, SimplePr
                 .lang(dto.getLang())
                 .main(dto.getMain())
                 .parameters(dto.getParameters())
+                .available(dto.getAvailable())
                 .build();
+        simpleProject.setId(dto.getId());
         return simpleProject;
     }
 
@@ -31,6 +33,7 @@ public class SimpleScriptConvertor extends BaseConverter<SimpleProject, SimplePr
                 .main(simpleProject.getMain())
                 .lang(simpleProject.getLang())
                 .parameters(simpleProject.getParameters())
+                .available(simpleProject.getAvailable())
                 .build();
         dto.setId(simpleProject.getId());
         return dto;

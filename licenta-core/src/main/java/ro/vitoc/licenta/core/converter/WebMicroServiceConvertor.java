@@ -38,6 +38,7 @@ public class WebMicroServiceConvertor extends BaseConverter<WebMicroService, Web
             res.getConfiguration().setCpus(cpus);
         if (res.getConfiguration().getMemory() == null)
             res.getConfiguration().setMemory(memory);
+        res.setId(dto.getId());
         return res;
     }
 

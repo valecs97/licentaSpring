@@ -22,8 +22,8 @@ public class WebMicroService extends BaseProject{
     Integer replicas;
 
     @Builder
-    public WebMicroService(String name, String location, String gitUrl, String branch, String lang, String main, Integer portIn,Integer portOut, ServiceConfiguration configuration, Integer replicas) {
-        super(name, location, gitUrl, branch, lang, main);
+    public WebMicroService(String name, String location, String gitUrl, String branch, String lang, String main,Boolean available, Integer portIn,Integer portOut, ServiceConfiguration configuration, Integer replicas) {
+        super(name, location, gitUrl, branch, lang, main,available);
         this.portIn = portIn;
         this.portOut = portOut;
         this.configuration = configuration;

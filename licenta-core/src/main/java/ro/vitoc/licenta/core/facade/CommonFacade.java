@@ -13,4 +13,5 @@ public interface CommonFacade {
     void createRequirementsFile(BaseProject project) throws IOException;
     Boolean preCheckProject(BaseProject project);
     Boolean postCheckProject(BaseProject project);
+    void deleteFolder(String folder);
 }

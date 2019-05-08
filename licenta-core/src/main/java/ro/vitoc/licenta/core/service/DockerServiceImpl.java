@@ -82,6 +82,17 @@ public class DockerServiceImpl implements DockerService {
     }
 
     @Override
+    public String removeImage(BaseProject project){
+        log.trace("removeImage: name={},location={}", project.getName(), project.getLocation());
+        try {
+            return processService.executeCommand(new String[]{"docker","image","rm","--force",project.getName()});
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
     public String pushImage(BaseProject project) {
         log.trace("pushImage: name={},location={}", project.getName(), project.getLocation());
         try {

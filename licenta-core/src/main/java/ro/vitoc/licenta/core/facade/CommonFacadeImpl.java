@@ -48,4 +48,10 @@ public class CommonFacadeImpl implements CommonFacade{
         log.trace("postCheckProject dao, projectName={}",project.getName());
         return commonService.postCheckProject(project);
     }
+
+    @Override
+    public void deleteFolder(String folder) {
+        log.trace("deleteFolder dao, folder={}",folder);
+        commonService.deleteFolder(folder);
+    }
 }

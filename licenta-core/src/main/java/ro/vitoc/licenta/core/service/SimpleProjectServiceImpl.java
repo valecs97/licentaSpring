@@ -3,6 +3,7 @@ package ro.vitoc.licenta.core.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import ro.vitoc.licenta.core.cache.CacheManager;
 import ro.vitoc.licenta.core.model.SimpleProject;
@@ -33,6 +34,28 @@ public class SimpleProjectServiceImpl implements SimpleProjectService {
         return simpleProjects;
     }
 
+    @Override
+    public SimpleProject find(Example<SimpleProject> example) {
+        log.trace("find simple project--- method entered, example={}", example.getProbe());
+
+        SimpleProject simpleProject = simpleProjectRepository.findOne(example).orElse(null);
+
+        log.trace("find: simpleProject={}", simpleProject);
+
+        return simpleProject;
+    }
+
+    @Override
+    public SimpleProject findByUrlAndBranch(String url, String branch) {
+        log.trace("findByUrlAndBranch simple project--- method entered, url={},branch={}", url,branch);
+
+        SimpleProject simpleProject = simpleProjectRepository.findByGitUrlAndBranchAllIgnoreCase(url,branch).stream().findAny().orElse(null);
+
+        log.trace("findByUrlAndBranch: simpleProject={}", simpleProject);
+
+        return simpleProject;
+    }
+
 /*    @Override
     @Transactional
     public Student updateStudent(Long studentId, String serialNumber, String name, Integer groupNumber) {
@@ -52,22 +75,24 @@ public class SimpleProjectServiceImpl implements SimpleProjectService {
     }*/
 
     @Override
-    public SimpleProject createProjectScript(SimpleProject simpleProject) {
-        log.trace("before createSimpleScript: simpleProject={}",
+    public SimpleProject createUpdateProjectScript(SimpleProject simpleProject) {
+        log.trace("before createUpdateProjectScript: simpleProject={}",
                 simpleProject);
         simpleProject = simpleProjectRepository.save(simpleProject);
 
-        log.trace("after createSimpleScript: simpleProject={}", simpleProject);
+        log.trace("after createUpdateProjectScript: simpleProject={}", simpleProject);
 
         return simpleProject;
     }
+
 
     @Override
     public SimpleProject findSimpleProjectByName(String simpleProject) {
         log.trace("before findSimpleProject: simpleProject={}",
                 simpleProject);
+
         SimpleProject res = cacheManager.checkCache(SimpleProject.builder().name(simpleProject).build());
-        if (res == null){
+        if (res == null) {
             res = simpleProjectRepository.findAll().stream().filter(elem -> elem.getName().equals(simpleProject)).findAny().orElse(null);
             if (res != null)
                 cacheManager.cacheValue(res);

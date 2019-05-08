@@ -20,8 +20,8 @@ public class MicroService extends BaseProject{
     ServiceConfiguration configuration;
 
     @Builder
-    public MicroService(String name, String location, String gitUrl, String branch, String lang, String main, ServiceConfiguration configuration) {
-        super(name, location, gitUrl, branch, lang, main);
+    public MicroService(String name, String location, String gitUrl, String branch, String lang, String main, Boolean available, ServiceConfiguration configuration) {
+        super(name, location, gitUrl, branch, lang, main, available);
         this.configuration = configuration;
     }
 }

@@ -26,6 +26,7 @@ public abstract class BaseProject extends BaseEntity<Long> implements Serializab
     @DefaultValue("null")
     private String lang;
     private String main;
+    private Boolean available;
 //    @Column
 //    @ElementCollection(targetClass=String.class,fetch = FetchType.EAGER)
 //    private List<String> req;

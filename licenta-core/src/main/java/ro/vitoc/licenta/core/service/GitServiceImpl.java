@@ -20,22 +20,22 @@ public class GitServiceImpl implements GitService {
     private static final String gitLocation = "\\Git projects\\";
     private final SshSessionFactory sshSessionFactory = new JschConfigSessionFactory() {
         @Override
-        protected void configure(OpenSshConfig.Host host, Session session ) {
+        protected void configure(OpenSshConfig.Host host, Session session) {
             // do nothing
         }
     };
 
     @Override
-    public Boolean cloneGitRepository(String name,String url, String branch) {
-        log.trace("cloneGitRepository: url={},branch={}",url,branch);
+    public Boolean cloneGitRepository(String name, String url, String branch) {
+        log.trace("cloneGitRepository: url={},branch={}", url, branch);
         if (!checkGitRepository(url))
             return false;
         try {
-            Ref branchRef = getBranchRef(url,branch);
+            Ref branchRef = getBranchRef(url, branch);
             if (branchRef == null)
                 throw new InvalidRefNameException("Branch does not exist");
             log.trace("cloneGitRepository clone folder: " + getLocation(name));
-            Git.cloneRepository()
+            Git res = Git.cloneRepository()
                     .setURI(url)
                     .setDirectory(Paths.get(getLocation(name)).toFile())
                     .setBranchesToClone(Collections.singleton(branchRef.getName()))
@@ -44,8 +44,9 @@ public class GitServiceImpl implements GitService {
                         SshTransport sshTransport = ( SshTransport )transport;
                         sshTransport.setSshSessionFactory( sshSessionFactory );
                     })*/
-                    .setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97","Alecs240085"))
+                    //.setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97", ""))
                     .call();
+            res.getRepository().close();
         } catch (GitAPIException e) {
             log.trace("Git error : " + e.getMessage());
             return false;
@@ -53,20 +54,20 @@ public class GitServiceImpl implements GitService {
         return true;
     }
 
-    private Boolean checkGitRepository(String url){
-        log.trace("checkGitRepository: url={}",url);
+    private Boolean checkGitRepository(String url) {
+        log.trace("checkGitRepository: url={}", url);
         try {
             Git.lsRemoteRepository()
                     .setHeads(true)
                     .setTags(true)
                     .setRemote(url)
-                    .setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97","Alecs240085"))
+                    //.setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97", ""))
 /*                    .setTransportConfigCallback(transport -> {
                         SshTransport sshTransport = ( SshTransport )transport;
                         sshTransport.setSshSessionFactory( sshSessionFactory );
                     })*/
                     .call();
-        } catch (GitAPIException e){
+        } catch (GitAPIException e) {
             log.trace("Git error : " + e.getMessage());
             return false;
         }
@@ -76,13 +77,13 @@ public class GitServiceImpl implements GitService {
 
     @Override
     public Ref getBranchRef(String url, String branch) {
-        log.trace("getBranchRef: url={},branch={}",url,branch);
+        log.trace("getBranchRef: url={},branch={}", url, branch);
         try {
             return Git.lsRemoteRepository()
                     .setHeads(true)
                     .setTags(true)
                     .setRemote(url)
-                    .setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97","Alecs240085"))
+                    //.setCredentialsProvider(new UsernamePasswordCredentialsProvider("valecs97", ""))
 /*                    .setTransportConfigCallback(transport -> {
                         SshTransport sshTransport = ( SshTransport )transport;
                         sshTransport.setSshSessionFactory( sshSessionFactory );
@@ -92,7 +93,7 @@ public class GitServiceImpl implements GitService {
                     .filter(ref -> ref.getName().contains(branch))
                     .findAny()
                     .orElse(null);
-        } catch (GitAPIException e){
+        } catch (GitAPIException e) {
             log.trace("Git error : " + e.getMessage());
             return null;
         }

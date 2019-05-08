@@ -5,9 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import ro.vitoc.licenta.core.model.WebMicroService;
-import ro.vitoc.licenta.core.repository.MicroServiceRepository;
-import ro.vitoc.licenta.core.repository.WebMicroServiceRepository;
 import ro.vitoc.licenta.miscellaneous.algorithms.DockerAlgorithms;
 import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 
@@ -15,7 +12,6 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 @Component

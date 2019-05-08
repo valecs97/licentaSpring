@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import ro.vitoc.licenta.core.model.WebMicroService;
 import ro.vitoc.licenta.core.repository.WebMicroServiceRepository;
@@ -36,7 +37,29 @@ public class WebMicroServiceServiceImpl implements WebMicroServiceService {
     }
 
     @Override
-    public WebMicroService createWebMicroService(WebMicroService webMicroService) {
+    public WebMicroService find(Example<WebMicroService> example) {
+        log.trace("find webMicroService--- method entered");
+
+        WebMicroService webMicroService = webMicroServiceRepository.findOne(example).orElse(null);
+
+        log.trace("find: webMicroService={}", webMicroService);
+
+        return webMicroService;
+    }
+
+    @Override
+    public WebMicroService findByUrlAndBranch(String url, String branch) {
+        log.trace("find webMicroService--- method entered");
+
+        WebMicroService webMicroService = webMicroServiceRepository.findByGitUrlAndBranchAllIgnoreCase(url,branch).stream().findAny().orElse(null);
+
+        log.trace("find: webMicroService={}", webMicroService);
+
+        return webMicroService;
+    }
+
+    @Override
+    public WebMicroService createUpdateWebMicroService(WebMicroService webMicroService) {
         log.trace("before createWebMicroService: webMicroService={}",
                 webMicroService);
 

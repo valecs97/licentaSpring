@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface DockerService {
     String createImage(BaseProject project);
+    String removeImage(BaseProject project);
     String pushImage(BaseProject project);
     String runImage(String tag, List<String> args);
     String createContainer(BaseProject project);

@@ -1,6 +1,7 @@
 package ro.vitoc.licenta.core.dto;
 
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.*;
 
 import java.io.Serializable;
@@ -17,4 +18,5 @@ public class BaseProjectDto extends BaseDto implements Serializable {
     private String branch;
     private String lang;
     private String main;
+    private Boolean available;
 }

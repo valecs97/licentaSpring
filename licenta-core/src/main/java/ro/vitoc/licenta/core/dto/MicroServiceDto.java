@@ -13,8 +13,8 @@ public class MicroServiceDto extends BaseProjectDto {
     ServiceConfigurationDto configuration;
 
     @Builder
-    public MicroServiceDto(String name, String gitUrl, String branch, String lang, String main, ServiceConfigurationDto configuration) {
-        super(name, gitUrl, branch, lang, main);
+    public MicroServiceDto(String name, String gitUrl, String branch, String lang, String main,Boolean available, ServiceConfigurationDto configuration) {
+        super(name, gitUrl, branch, lang, main,available);
         this.configuration = configuration;
     }
 }

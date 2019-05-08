@@ -45,8 +45,10 @@ public class SimpleProjectController {
     ) {
         log.trace("executeSimpleScript");
 
-        if (simpleProjectFacade.findSimpleProjectByName(tag) == null)
-            return new ResponseEntity("Project was not found !",HttpStatus.NOT_FOUND);
+        SimpleProject res = simpleProjectFacade.findSimpleProjectByName(tag);
+
+        if (res == null || !res.getAvailable())
+            return new ResponseEntity("The project does not exist or is not available at the moment (an upgrade is on it's way) !",HttpStatus.NOT_FOUND);
 
         String result = dockerFacade.runImage(tag,args);
 
@@ -59,6 +61,10 @@ public class SimpleProjectController {
     public ResponseEntity createSimpleProject(
             @RequestBody final SimpleProjectDto simpleProjectDto) {
         log.trace("createSimpleScript: simpleProjectDto={}", simpleProjectDto);
+
+        if (simpleProjectFacade.findSimpleProjectByName(simpleProjectDto.getName()) != null){
+            return new ResponseEntity("A project with the same name exists already !", HttpStatus.CONFLICT);
+        }
 
         SimpleProject simpleProject = simpleScriptConvertor.convertDtoToModel(simpleProjectDto);
         String branch = gitFacade.getBranchRef(simpleProjectDto.getGitUrl(), simpleProjectDto.getBranch()).getName();

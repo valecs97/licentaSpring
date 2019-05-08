@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import ro.vitoc.licenta.core.model.MicroService;
 import ro.vitoc.licenta.core.repository.MicroServiceRepository;
@@ -32,7 +33,29 @@ public class MicroServiceServiceImpl implements MicroServiceService{
     }
 
     @Override
-    public MicroService createMicroService(MicroService microService) {
+    public MicroService find(Example<MicroService> example) {
+        log.trace("find MicroService--- method entered");
+
+        MicroService microService = microServiceRepository.findOne(example).orElse(null);
+
+        log.trace("find: MicroService={}", microService);
+
+        return microService;
+    }
+
+    @Override
+    public MicroService findByUrlAndBranch(String url, String branch) {
+        log.trace("find MicroService--- method entered");
+
+        MicroService microService = microServiceRepository.findByGitUrlAndBranchAllIgnoreCase(url,branch).stream().findAny().orElse(null);
+
+        log.trace("find: MicroService={}", microService);
+
+        return microService;
+    }
+
+    @Override
+    public MicroService createUpdateMicroService(MicroService microService) {
         log.trace("before createMicroService: microService={}",
                 microService);
 

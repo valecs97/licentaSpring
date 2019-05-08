@@ -33,6 +33,7 @@ public class MicroServiceConvertor extends BaseConverter<MicroService, MicroServ
             microService.getConfiguration().setCpus(cpus);
         if (microService.getConfiguration().getMemory() == null)
             microService.getConfiguration().setMemory(memory);
+        microService.setId(dto.getId());
         return microService;
     }
 

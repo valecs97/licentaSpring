@@ -39,6 +39,12 @@ public class DockerFacadeImpl implements DockerFacade{
     }
 
     @Override
+    public String removeImage(BaseProject project) {
+        log.trace("updateImage dao, projectName={}",project.getName());
+        return dockerService.removeImage(project);
+    }
+
+    @Override
     public String runImage(String tag, List<String> args) {
         log.trace("runImage dao, tag={}, args={}",tag,args);
         return dockerService.runImage(tag,args);
