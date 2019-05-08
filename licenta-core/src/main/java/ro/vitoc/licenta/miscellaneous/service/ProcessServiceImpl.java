@@ -64,6 +64,22 @@ public class ProcessServiceImpl implements ProcessService {
     }
 
     @Override
+    public int returnCode(String[] command) {
+        Process process;
+        try {
+            process = Runtime.getRuntime().exec(command);
+        } catch (IOException e) {
+            return 2;
+        }
+        try {
+            process.waitFor();
+        } catch (InterruptedException e) {
+            return 3;
+        }
+        return process.exitValue();
+    }
+
+    @Override
     public void executeCommandWithoutWait(String command) throws IOException {
         executeCommand(new String[]{command},false);
     }

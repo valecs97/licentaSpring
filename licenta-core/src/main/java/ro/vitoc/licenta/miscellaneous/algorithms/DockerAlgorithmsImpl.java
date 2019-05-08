@@ -42,7 +42,7 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
     @Override
     public String createDefaultDockerComposer() throws IOException, URISyntaxException {
         log.trace("Creating docker DEFAULT composer file");
-        return createDefaultDockerComposer(null,null);
+        return createDefaultDockerComposer(null, null);
     }
 
     public String createDefaultDockerComposer(List<WebMicroService> configs, List<MicroService> configs2) throws IOException, URISyntaxException {
@@ -86,6 +86,17 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
         res += "networks:\\n";
         res += "\\twebnet:\\n";
         return res.replace("\\r\\n", "\\n").replace("\\t", "  ");
+    }
+
+    @Override
+    public void createSwarm() throws IOException {
+        log.trace("Creating swarm");
+        String vm = processService.getVMInfo(defaultVMName);
+        if (vm != null) {
+            String ip = vm.split(" ")[2].split("//")[1].split(":")[0];
+            log.trace("Creating swarm init");
+            log.trace(processService.executeCommand(processService.executeInVM(defaultVMName, swarmInitCommand + " " + ip)));
+        }
     }
 
     @Override

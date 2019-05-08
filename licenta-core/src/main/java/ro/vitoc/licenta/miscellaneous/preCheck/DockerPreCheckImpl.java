@@ -48,6 +48,7 @@ public class DockerPreCheckImpl implements DockerPreCheck {
             String fileContent = null;
             try {
                 fileContent = dockerAlgorithms.createDefaultDockerComposer();
+                dockerAlgorithms.createSwarm();
                 dockerAlgorithms.deployComposerFile(fileContent);
             } catch (IOException | URISyntaxException e) {
                 log.trace("createDefaultDockerComposer failed with error : " + e.getMessage());
