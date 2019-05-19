@@ -10,7 +10,7 @@ public interface DockerFacade {
     void startContainer(String containerId);
     String createImage(BaseProject project);
     String removeImage(BaseProject project);
-    String runImage(String tag, List<String> args);
+    String runImage(String tag, List<String> args, Boolean argType);
     String pushImage(BaseProject project);
     void redeployAll();
 }

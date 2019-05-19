@@ -53,6 +53,7 @@ public class SimpleProjectFacadeImpl implements SimpleProjectFacade{
         SimpleProject simpleProject = simpleScriptConvertor.convertDtoToModel(simpleProjectdto);
         simpleProject.setBranch(branch);
         simpleProject.setLocation(location);
+        simpleProject.setAvailable(true);
         return simpleScriptConvertor.convertModelToDto(simpleProjectService.createUpdateProjectScript(simpleProject));
     }
 

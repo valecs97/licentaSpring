@@ -8,7 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.zeroturnaround.exec.ProcessExecutor;
+import ro.vitoc.licenta.core.dto.LogDto;
 import ro.vitoc.licenta.core.model.BaseProject;
+import ro.vitoc.licenta.core.model.Log;
 import ro.vitoc.licenta.core.model.MicroService;
 import ro.vitoc.licenta.core.model.WebMicroService;
 import ro.vitoc.licenta.core.repository.MicroServiceRepository;
@@ -20,6 +23,7 @@ import javax.annotation.PostConstruct;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.util.*;
+import java.util.concurrent.TimeoutException;
 
 @Service
 public class DockerServiceImpl implements DockerService {
@@ -74,7 +78,23 @@ public class DockerServiceImpl implements DockerService {
                 .exec(new BuildImageResultCallback())
                 .awaitImageId(60, TimeUnit.SECONDS);*/
         try {
-            return processService.executeCommand(new String[]{"docker", "build", "--tag=" + project.getName(), project.getLocation()});
+            //return processService.executeCommand(new String[]{"docker", "build", "--tag=" + project.getName(), project.getLocation()});
+            try {
+                new ProcessExecutor().command("docker", "build", "--tag=" + project.getName(), project.getLocation())
+                        .redirectOutput(new org.zeroturnaround.exec.stream.LogOutputStream() {
+                            final String processName = project.getName();
+
+                            @Override
+                            protected void processLine(String line) {
+                                log.trace(line);
+                                //logController.add(log);
+                            }
+                        }).execute();
+            } catch (IOException | InterruptedException | TimeoutException e) {
+                log.trace("attachLogToWebSocket failed with message={}", e.getMessage());
+                throw new IOException();
+            }
+            return "DONE";
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -107,15 +127,19 @@ public class DockerServiceImpl implements DockerService {
     }
 
     @Override
-    public String runImage(String tag, List<String> args) {
+    public String runImage(String tag, List<String> args, Boolean argType) {
         log.trace("runImage: tag={},args={}", tag, args);
         List<String> command = new ArrayList<>();
         command.addAll(Arrays.asList("docker", "run"));
-        for (int i = 0; i < args.size(); i++) {
-            command.add("-e");
-            command.add("ARG" + i + "=" + args.get(i).replace(" ", "%20"));
+        if (argType) {
+            for (int i = 0; i < args.size(); i++) {
+                command.add("-e");
+                command.add("ARG" + i + "=" + args.get(i).replace(" ", "%20"));
+            }
         }
         command.add(tag);
+        if (!argType)
+            command.addAll(args);
         try {
             return processService.executeCommand(command.toArray(new String[command.size()]));
         } catch (IOException e) {

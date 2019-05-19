@@ -45,9 +45,9 @@ public class DockerFacadeImpl implements DockerFacade{
     }
 
     @Override
-    public String runImage(String tag, List<String> args) {
+    public String runImage(String tag, List<String> args, Boolean argType) {
         log.trace("runImage dao, tag={}, args={}",tag,args);
-        return dockerService.runImage(tag,args);
+        return dockerService.runImage(tag,args,argType);
     }
 
     @Override

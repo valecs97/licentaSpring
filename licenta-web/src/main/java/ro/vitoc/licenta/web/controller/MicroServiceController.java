@@ -3,6 +3,7 @@ package ro.vitoc.licenta.web.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import ro.vitoc.licenta.core.facade.GitFacade;
 import ro.vitoc.licenta.core.facade.MicroServiceFacade;
 import ro.vitoc.licenta.core.model.MicroService;
 import ro.vitoc.licenta.core.model.SimpleProject;
+import ro.vitoc.licenta.core.model.WebMicroService;
 import ro.vitoc.licenta.core.service.CommonService;
 import ro.vitoc.licenta.core.service.DockerService;
 import ro.vitoc.licenta.core.service.GitService;
@@ -61,7 +63,11 @@ public class MicroServiceController {
     public ResponseEntity createMicroService(
             @RequestBody final MicroServiceDto microServiceDto) {
         log.trace("createMicroService: microServiceDto={}", microServiceDto);
+        if (microServiceFacade.find(Example.of(MicroService.builder().name(microServiceDto.getName()).build())) != null){
+            return new ResponseEntity("A project with the same name exists already !", HttpStatus.CONFLICT);
+        }
 
+        microServiceDto.setLang(gitFacade.detectLanguage(microServiceDto.getGitUrl().split("/")[3],microServiceDto.getGitUrl().split("/")[4]));
         MicroService microService = microServiceConvertor.convertDtoToModel(microServiceDto);
         String branch = gitFacade.getBranchRef(microServiceDto.getGitUrl(), microServiceDto.getBranch()).getName();
         microService.setBranch(branch);

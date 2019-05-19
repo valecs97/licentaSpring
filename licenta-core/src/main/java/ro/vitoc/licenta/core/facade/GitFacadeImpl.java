@@ -32,4 +32,10 @@ public class GitFacadeImpl implements GitFacade {
         log.trace("getLocation dao, repositoryName={}",repositoryName);
         return gitService.getLocation(repositoryName);
     }
+
+    @Override
+    public String detectLanguage(String user, String repo) {
+        log.trace("detectLanguage dao, user={}, repo={}",user,repo);
+        return gitService.detectLanguage(user,repo);
+    }
 }

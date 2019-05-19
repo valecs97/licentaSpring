@@ -10,10 +10,10 @@ import ro.vitoc.licenta.core.model.MicroService;
 import ro.vitoc.licenta.core.model.WebMicroService;
 import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -44,6 +44,8 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
         log.trace("Creating docker DEFAULT composer file");
         return createDefaultDockerComposer(null, null);
     }
+
+
 
     public String createDefaultDockerComposer(List<WebMicroService> configs, List<MicroService> configs2) throws IOException, URISyntaxException {
         log.trace("Creating docker composer file");
@@ -87,6 +89,8 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
         res += "\\twebnet:\\n";
         return res.replace("\\r\\n", "\\n").replace("\\t", "  ");
     }
+
+
 
     @Override
     public void createSwarm() throws IOException {

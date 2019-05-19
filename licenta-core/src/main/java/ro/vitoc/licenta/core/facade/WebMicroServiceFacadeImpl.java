@@ -64,6 +64,7 @@ public class WebMicroServiceFacadeImpl implements WebMicroServiceFacade{
         WebMicroService webMicroService = webMicroServiceConvertor.convertDtoToModel(microServiceDto);
         webMicroService.setBranch(branch);
         webMicroService.setLocation(location);
+        webMicroService.setAvailable(true);
         return webMicroServiceConvertor.convertModelToDto(webMicroServiceService.createUpdateWebMicroService(webMicroService));
     }
 

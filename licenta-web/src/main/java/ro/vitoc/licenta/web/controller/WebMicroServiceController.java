@@ -3,6 +3,7 @@ package ro.vitoc.licenta.web.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -56,7 +57,11 @@ public class WebMicroServiceController {
     public ResponseEntity createWebMicroService(
             @RequestBody final WebMicroServiceDto webMicroServiceDto) {
         log.trace("createWebMicroService: webMicroServiceDto={}", webMicroServiceDto);
+        if (webMicroServiceFacade.find(Example.of(WebMicroService.builder().name(webMicroServiceDto.getName()).build())) != null){
+            return new ResponseEntity("A project with the same name exists already !", HttpStatus.CONFLICT);
+        }
 
+        webMicroServiceDto.setLang(gitFacade.detectLanguage(webMicroServiceDto.getGitUrl().split("/")[3],webMicroServiceDto.getGitUrl().split("/")[4]));
         WebMicroService webMicroService = webMicroServiceConvertor.convertDtoToModel(webMicroServiceDto);
         String branch = gitFacade.getBranchRef(webMicroServiceDto.getGitUrl(), webMicroServiceDto.getBranch()).getName();
         webMicroService.setBranch(branch);

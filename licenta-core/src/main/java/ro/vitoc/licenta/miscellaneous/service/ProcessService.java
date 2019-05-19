@@ -9,4 +9,5 @@ public interface ProcessService {
     void executeCommandWithoutWait(String command) throws IOException;
     String[] executeInVM(String VMname, String command);
     String getVMInfo(String VMName);
+    String getRequest(String urlToRead) throws Exception;
 }

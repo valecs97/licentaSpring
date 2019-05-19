@@ -10,7 +10,7 @@ public interface DockerService {
     String createImage(BaseProject project);
     String removeImage(BaseProject project);
     String pushImage(BaseProject project);
-    String runImage(String tag, List<String> args);
+    String runImage(String tag, List<String> args, Boolean argType);
     String createContainer(BaseProject project);
     void startContainer(String containerId);
     void redeployAll();

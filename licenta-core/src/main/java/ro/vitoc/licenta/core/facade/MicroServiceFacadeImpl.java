@@ -54,6 +54,7 @@ public class MicroServiceFacadeImpl implements MicroServiceFacade{
         MicroService microService = microServiceConvertor.convertDtoToModel(microServiceDto);
         microService.setBranch(branch);
         microService.setLocation(location);
+        microService.setAvailable(true);
         return microServiceConvertor.convertModelToDto(microServiceService.createUpdateMicroService(microService));
     }
 

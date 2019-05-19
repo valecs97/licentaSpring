@@ -1,6 +1,9 @@
 package ro.vitoc.licenta.core.service;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jcraft.jsch.Session;
+import org.apache.http.HttpStatus;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.TransportConfigCallback;
 import org.eclipse.jgit.api.errors.GitAPIException;
@@ -9,8 +12,11 @@ import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.transport.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Collections;
 
@@ -24,6 +30,9 @@ public class GitServiceImpl implements GitService {
             // do nothing
         }
     };
+
+    @Autowired
+    ProcessService processService;
 
     @Override
     public Boolean cloneGitRepository(String name, String url, String branch) {
@@ -102,6 +111,27 @@ public class GitServiceImpl implements GitService {
     @Override
     public String getLocation(String repositoryName) {
         return System.getenv("APPDATA") + gitLocation + repositoryName;
+    }
+
+    @Override
+    public String detectLanguage(String user, String repo) {
+        log.trace("getBranchRef: user={},repo={}", user, repo);
+        try {
+            //String payload = processService.executeCommand(new String[]{"curl","-s","https://api.github.com/repos/" + user + "/" + repo + "/languages"});
+            String payload = processService.getRequest("https://api.github.com/repos/" + user + "/" + repo + "/languages");
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = null;
+            try {
+                root = mapper.readTree(payload);
+            } catch (IOException e) {
+                log.trace("detectLanguage failed to parse body with message={}",e.getMessage());
+                return null;
+            }
+            return root.fieldNames().next();
+        } catch (Exception e) {
+            log.trace("Exception : " + e.getMessage());
+            return null;
+        }
     }
 /*
     private String getRepositoryName(String url){
