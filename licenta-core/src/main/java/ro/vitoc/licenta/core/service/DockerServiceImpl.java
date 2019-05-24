@@ -80,16 +80,7 @@ public class DockerServiceImpl implements DockerService {
         try {
             //return processService.executeCommand(new String[]{"docker", "build", "--tag=" + project.getName(), project.getLocation()});
             try {
-                new ProcessExecutor().command("docker", "build", "--tag=" + project.getName(), project.getLocation())
-                        .redirectOutput(new org.zeroturnaround.exec.stream.LogOutputStream() {
-                            final String processName = project.getName();
-
-                            @Override
-                            protected void processLine(String line) {
-                                log.trace(line);
-                                //logController.add(log);
-                            }
-                        }).execute();
+                processService.executeCommandFIX(new String[]{"docker", "build", "--tag=" + project.getName(), project.getLocation()});
             } catch (IOException | InterruptedException | TimeoutException e) {
                 log.trace("attachLogToWebSocket failed with message={}", e.getMessage());
                 throw new IOException();
@@ -105,9 +96,10 @@ public class DockerServiceImpl implements DockerService {
     public String removeImage(BaseProject project){
         log.trace("removeImage: name={},location={}", project.getName(), project.getLocation());
         try {
-            return processService.executeCommand(new String[]{"docker","image","rm","--force",project.getName()});
-        } catch (IOException e) {
-            e.printStackTrace();
+            processService.executeCommandFIX(new String[]{"docker","image","rm","--force",project.getName()});
+            return "Process finished";
+        } catch (IOException | InterruptedException | TimeoutException e) {
+            log.trace("removeImage failed with message={}",e.getMessage());
             return null;
         }
     }
@@ -117,11 +109,11 @@ public class DockerServiceImpl implements DockerService {
         log.trace("pushImage: name={},location={}", project.getName(), project.getLocation());
         try {
             String newTag = dockerUser + "/" + project.getName();
-            log.trace(processService.executeCommand(new String[]{"docker","tag",project.getName(),newTag}));
-            log.trace(processService.executeCommand(new String[]{"docker", "push", newTag}));
+            processService.executeCommandFIX(new String[]{"docker","tag",project.getName(),newTag});
+            processService.executeCommandFIX(new String[]{"docker", "push", newTag});
             return newTag;
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException | InterruptedException | TimeoutException e) {
+            log.trace("pushImage failed with message={}",e.getMessage());
             return null;
         }
     }
@@ -141,8 +133,9 @@ public class DockerServiceImpl implements DockerService {
         if (!argType)
             command.addAll(args);
         try {
-            return processService.executeCommand(command.toArray(new String[command.size()]));
-        } catch (IOException e) {
+            processService.executeCommandFIX(command.toArray(new String[command.size()]));
+            return "Process finished";
+        } catch (IOException | InterruptedException | TimeoutException e) {
             e.printStackTrace();
             return null;
         }
@@ -167,7 +160,7 @@ public class DockerServiceImpl implements DockerService {
         try {
             fileContent = dockerAlgorithms.createDefaultDockerComposer(webMicroServices,microServices);
             dockerAlgorithms.deployComposerFile(fileContent);
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException | URISyntaxException | InterruptedException | TimeoutException  e) {
             log.trace("createDefaultDockerComposer failed with error : " + e.getMessage());
         }
 

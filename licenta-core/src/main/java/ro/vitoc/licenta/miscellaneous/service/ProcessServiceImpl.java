@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.zeroturnaround.exec.ProcessExecutor;
 import ro.vitoc.licenta.core.facade.SimpleProjectFacadeImpl;
 
 import java.io.BufferedReader;
@@ -13,6 +14,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.concurrent.TimeoutException;
 
 @Service
 public class ProcessServiceImpl implements ProcessService {
@@ -63,6 +65,32 @@ public class ProcessServiceImpl implements ProcessService {
     @Override
     public String executeCommand(String command) throws IOException {
         return executeCommand(new String[]{command});
+    }
+
+    @Override
+    public void executeCommandFIX(String[] command) throws InterruptedException, TimeoutException, IOException {
+        new ProcessExecutor().command(command)
+                .redirectOutput(new org.zeroturnaround.exec.stream.LogOutputStream() {
+
+                    @Override
+                    protected void processLine(String line) {
+                        log.trace(line);
+                        //logController.add(log);
+                    }
+                }).execute();
+    }
+
+    @Override
+    public void executeCommandFIX(String command) throws InterruptedException, TimeoutException, IOException {
+        new ProcessExecutor().command(command)
+                .redirectOutput(new org.zeroturnaround.exec.stream.LogOutputStream() {
+
+                    @Override
+                    protected void processLine(String line) {
+                        log.trace(line);
+                        //logController.add(log);
+                    }
+                }).execute();
     }
 
     @Override

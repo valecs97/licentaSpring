@@ -17,6 +17,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.TimeoutException;
 
 @Service
 public class CommonServiceImpl implements CommonService {
@@ -125,16 +126,16 @@ public class CommonServiceImpl implements CommonService {
     }
 
     @Override
-    public void createRequirementsFile(BaseProject project) throws IOException {
+    public void createRequirementsFile(BaseProject project) {
         log.trace("createRequirementsFile: location={}, req={}", project.getLocation());
         try {
             if (project.getLang().toLowerCase().contains("python")) {
-                log.trace(processService.executeCommand(installPipReqs));
+                processService.executeCommandFIX(installPipReqs);
                 //.replace("\\","/").replace(" ","\\ ")
-                log.trace(processService.executeCommand(createReqs + " \"" + project.getLocation() + "\""));
+                processService.executeCommandFIX(createReqs + " \"" + project.getLocation() + "\"");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException | TimeoutException | InterruptedException e) {
+            log.trace("createRequirementsFile failed with message={}",e.getMessage());
         }
     }
 

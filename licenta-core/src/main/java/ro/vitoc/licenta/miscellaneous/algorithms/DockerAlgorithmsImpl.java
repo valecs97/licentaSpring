@@ -16,6 +16,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 @Component
 public class DockerAlgorithmsImpl implements DockerAlgorithms {
@@ -93,28 +94,28 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
 
 
     @Override
-    public void createSwarm() throws IOException {
+    public void createSwarm() throws IOException, TimeoutException, InterruptedException {
         log.trace("Creating swarm");
         String vm = processService.getVMInfo(defaultVMName);
         if (vm != null) {
             String ip = vm.split(" ")[2].split("//")[1].split(":")[0];
             log.trace("Creating swarm init");
-            log.trace(processService.executeCommand(processService.executeInVM(defaultVMName, swarmInitCommand + " " + ip)));
+            processService.executeCommandFIX(processService.executeInVM(defaultVMName, swarmInitCommand + " " + ip));
         }
     }
 
     @Override
-    public void deployComposerFile(String fileContent) throws IOException {
+    public void deployComposerFile(String fileContent) throws IOException, TimeoutException, InterruptedException {
         log.trace("Deploying docker composer file");
 
-        log.trace(processService.executeCommand(processService.executeInVM(defaultVMName, "printf \'" + fileContent + "\' > " + defaultDockerComposerFile)));
+        processService.executeCommandFIX(processService.executeInVM(defaultVMName, "printf \'" + fileContent + "\' > " + defaultDockerComposerFile));
         String vm = processService.getVMInfo(defaultVMName);
         if (vm != null) {
             String ip = vm.split(" ")[2].split("//")[1].split(":")[0];
             log.trace("Creating swarm init");
-            log.trace(processService.executeCommand(processService.executeInVM(defaultVMName, swarmInitCommand + " " + ip)));
+            processService.executeCommandFIX(processService.executeInVM(defaultVMName, swarmInitCommand + " " + ip));
             log.trace("Launching the docker composer");
-            log.trace(processService.executeCommand(processService.executeInVM(defaultVMName, deployStackCommand + " " + defaultDockerComposerFile + " " + swarmName)));
+            processService.executeCommandFIX(processService.executeInVM(defaultVMName, deployStackCommand + " " + defaultDockerComposerFile + " " + swarmName));
         }
     }
 

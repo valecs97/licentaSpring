@@ -10,6 +10,7 @@ import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.concurrent.TimeoutException;
 
 @Component
 public class CommonPreCheckImpl implements CommonPreCheck {
@@ -23,10 +24,10 @@ public class CommonPreCheckImpl implements CommonPreCheck {
     public void checkPip() {
         if (processService.returnCode(new String[]{"pip"}) != 0) {
             try {
-                log.trace(processService.executeCommand(new String[]{
+                processService.executeCommandFIX(new String[]{
                     "python", getClass().getClassLoader().getResource("get-pip.py").toURI().toString().replace("file:/","")
-                }));
-            } catch (IOException | URISyntaxException e) {
+                });
+            } catch (IOException | URISyntaxException | InterruptedException | TimeoutException e) {
                 log.trace("checkPip could not install pip ! message={}", e.getMessage());
             }
         }

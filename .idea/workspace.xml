@@ -7,30 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="717c29d5-2903-4278-a158-6eeb3891fea4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ro_vitoc_licenta_licenta_web_main_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ro_vitoc_licenta_licenta_web_main_war_exploded.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/licentaSpring.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/DockerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/DockerFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/DockerFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/DockerFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/GitFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/GitFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/GitFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/GitFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithms.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-web/out/production/resources/local/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-web/out/production/resources/local/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -325,86 +315,127 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-653256013">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="491" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="491" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="96" column="26" lean-forward="true" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/SimpleProjectServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-680">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="106">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="142">
+              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="41" />
+            <state relative-caret-position="-132">
+              <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="43" />
+            <state relative-caret-position="1139">
+              <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+            <state relative-caret-position="-897">
+              <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/converter/SimpleScriptConvertor.java">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+              <folding>
+                <element signature="e#2573#2851#0" expanded="true" />
+                <element signature="e#2850#2851#0" expanded="true" />
+                <element signature="e#3234#3512#0" expanded="true" />
+                <element signature="e#3511#3512#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="55" column="76" lean-forward="true" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="95" column="20" selection-start-line="95" selection-start-column="20" selection-end-line="113" selection-end-column="21" />
+              <caret line="8" column="103" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="103" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -453,7 +484,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\Vitoc\.gradle\wrapper\dists\gradle-4.0-all\ac27o8rbd0ic8ih41or9l32mv\gradle-4.0" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\valec\.gradle\wrapper\dists\gradle-4.0-all\ac27o8rbd0ic8ih41or9l32mv\gradle-4.0" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -908,7 +939,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="10880900538655" />
+        <entry key="$PROJECT_DIR$" value="10876826426930" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="153059177" />
         <entry key="$PROJECT_DIR$/catalog-core/build.gradle" value="921521400" />
@@ -1102,7 +1133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/model/SimpleProject.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/SimpleProjectService.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/dto/BaseProjectDto.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/dto/SimpleProjectDto.java" />
@@ -1124,10 +1154,8 @@
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/MicroServiceService.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/MicroServiceServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/resources/get-pip.py" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheck.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" />
         <option value="$PROJECT_DIR$/gradlew" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/model/Log.java" />
@@ -1138,21 +1166,24 @@
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/GitFacadeImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitService.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithms.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerService.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/DockerFacade.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/DockerFacadeImpl.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1170,10 +1201,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="528" />
-    <option name="y" value="-11" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="525" />
+    <option name="y" value="-15" />
+    <option name="width" value="975" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1182,41 +1213,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1224,7 +1250,7 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1233,7 +1259,7 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1243,73 +1269,7 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="facade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1320,7 +1280,7 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1330,7 +1290,7 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1341,7 +1301,7 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1352,7 +1312,7 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1363,76 +1323,48 @@
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="preConfig" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring_modified" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1443,14 +1375,14 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558266932515" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558687638088" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-composer.yml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.433832" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -1504,7 +1436,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.7" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="RestServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -1707,11 +1639,15 @@
       <workItem from="1558195911454" duration="3021000" />
       <workItem from="1558251273908" duration="681000" />
       <workItem from="1558255969145" duration="9869000" />
+      <workItem from="1558423731729" duration="1671000" />
+      <workItem from="1558454760137" duration="1550000" />
+      <workItem from="1558458630565" duration="1875000" />
+      <workItem from="1558634243584" duration="1739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333813000" />
+    <option name="totallyTimeSpent" value="340648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1723,10 +1659,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20858485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -1736,8 +1672,8 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4978678" weight="0.24728851" />
-      <window_info anchor="bottom" x="0" y="23" width="1920" height="1017" id="Run" order="2" sideWeight="0.8074398" type="WINDOWED" visible="true" weight="0.483023" />
-      <window_info anchor="bottom" x="0" y="23" width="1920" height="1017" id="Debug" order="3" sideWeight="0.49626866" visible="true" weight="0.23861171" />
+      <window_info anchor="bottom" x="0" y="23" width="1537" height="802" id="Run" order="2" sideWeight="0.8074398" type="WINDOWED" visible="true" weight="0.483023" />
+      <window_info anchor="bottom" x="0" y="23" width="1920" height="1017" id="Debug" order="3" sideWeight="0.49626866" weight="0.23861171" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5021322" side_tool="true" weight="0.3308026" />
@@ -1751,7 +1687,7 @@
       <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49946696" weight="0.3275488" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.48081023" weight="0.2548807" />
-      <window_info anchor="bottom" id="Statistic" order="17" />
+      <window_info anchor="bottom" id="Statistic" order="17" visible="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1788,19 +1724,10 @@
           </properties>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/ro_vitoc_licenta_licenta_web_main_war_exploded.xml" />
     <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor">
@@ -1816,13 +1743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/LogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1944,24 +1864,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1972,34 +1878,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2081">
-          <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/CommonFacadeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="57" column="100" selection-start-line="57" selection-start-column="100" selection-end-line="57" selection-end-column="100" />
         </state>
       </provider>
     </entry>
@@ -2031,20 +1913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-web/src/main/resources/DockerfileJava">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -2059,38 +1927,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="55" column="76" lean-forward="true" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="95" column="20" selection-start-line="95" selection-start-column="20" selection-end-line="113" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="96" column="26" lean-forward="true" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/SimpleProjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
+        <state relative-caret-position="85">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/LogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="56" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="67" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -2101,31 +1983,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java">
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="43" />
+        <state relative-caret-position="612">
+          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java">
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/config/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        <state relative-caret-position="119">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java">
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="41" />
+        <state relative-caret-position="106">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java">
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="1139">
+          <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="103" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-897">
+          <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <element signature="e#2573#2851#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+            <element signature="e#3234#3512#0" expanded="true" />
+            <element signature="e#3511#3512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
         </state>
       </provider>
     </entry>

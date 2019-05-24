@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeoutException;
 
 @Component
 public class DockerPreCheckImpl implements DockerPreCheck {
@@ -50,13 +51,16 @@ public class DockerPreCheckImpl implements DockerPreCheck {
                 fileContent = dockerAlgorithms.createDefaultDockerComposer();
                 dockerAlgorithms.createSwarm();
                 dockerAlgorithms.deployComposerFile(fileContent);
-            } catch (IOException | URISyntaxException e) {
+            } catch (IOException | URISyntaxException | InterruptedException | TimeoutException e) {
                 log.trace("createDefaultDockerComposer failed with error : " + e.getMessage());
             }
         }else if (Arrays.stream(vms.split("\n")).noneMatch(elem -> elem.split(" ")[0].equals(defaultVMName) && elem.split(" ")[1].equals("Running"))) {
             log.trace("Default virtual machine is not running ! Starting the machine !");
-            String res = processService.executeCommand(startDefaultVM + " " + defaultVMName);
-            log.trace(res);
+            try {
+                processService.executeCommandFIX(new String[]{"docker-machine","start",defaultVMName});
+            } catch (InterruptedException | TimeoutException e) {
+                log.trace("checkDefaultVM failed to start the virtual machine with message={}",e.getMessage());
+            }
         }
         log.trace("Default virtual machine up and running !");
         VMStatus.countDown();
