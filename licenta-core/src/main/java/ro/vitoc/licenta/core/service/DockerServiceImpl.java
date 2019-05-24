@@ -133,8 +133,7 @@ public class DockerServiceImpl implements DockerService {
         if (!argType)
             command.addAll(args);
         try {
-            processService.executeCommand(command.toArray(new String[command.size()]));
-            return "Process finished";
+            return processService.executeCommand(command.toArray(new String[command.size()]));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
