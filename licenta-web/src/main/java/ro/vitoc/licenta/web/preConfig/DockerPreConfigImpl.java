@@ -65,7 +65,7 @@ public class DockerPreConfigImpl implements DockerPreConfig {
     public void attachLogToWebSocket(BaseProject project) {
         LogOutputRedirect runnable = new LogOutputRedirect(project);
         Thread thread = new Thread(runnable);
-        thread.start();
+        //thread.start();
     }
 
     private class LogOutputRedirect implements Runnable {

@@ -7,19 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="717c29d5-2903-4278-a158-6eeb3891fea4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/licentaSpring.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -338,12 +326,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="491" />
+          <entry key="java" value="497" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="491" />
+          <entry key="JAVA" value="497" />
         </counts>
       </usages-collector>
     </session>
@@ -353,13 +341,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="72">
+              <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="142">
@@ -371,7 +359,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
+            <state relative-caret-position="1528">
               <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
             </state>
           </provider>
@@ -386,11 +374,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-897">
-              <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+            <state relative-caret-position="369">
+              <caret line="137" column="28" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -1176,14 +1164,14 @@
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java" />
-        <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1375,7 +1363,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558687638088" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558689306689" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-composer.yml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
@@ -1642,12 +1630,12 @@
       <workItem from="1558423731729" duration="1671000" />
       <workItem from="1558454760137" duration="1550000" />
       <workItem from="1558458630565" duration="1875000" />
-      <workItem from="1558634243584" duration="1739000" />
+      <workItem from="1558634243584" duration="2840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340648000" />
+    <option name="totallyTimeSpent" value="341749000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1686,8 +1674,8 @@
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.329718" />
       <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49946696" weight="0.3275488" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.48081023" weight="0.2548807" />
-      <window_info anchor="bottom" id="Statistic" order="17" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.48081023" weight="0.25354108" />
+      <window_info anchor="bottom" id="Statistic" order="17" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1997,13 +1985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -2021,24 +2002,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-897">
-          <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -2066,6 +2033,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1528">
+          <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="137" column="28" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
         </state>
       </provider>
     </entry>
