@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="717c29d5-2903-4278-a158-6eeb3891fea4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -316,29 +316,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="14" />
+          <entry key="java" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="14" />
+          <entry key="JAVA" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="747" />
+          <entry key="java" value="926" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="747" />
+          <entry key="JAVA" value="926" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="457">
@@ -350,17 +350,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1066">
-              <caret line="109" column="43" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+            <state relative-caret-position="457">
+              <caret line="110" column="112" selection-start-line="110" selection-start-column="112" selection-end-line="110" selection-end-column="112" />
             </state>
           </provider>
         </entry>
@@ -375,19 +366,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+            <state relative-caret-position="68">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1528">
-              <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+            <state relative-caret-position="391">
+              <caret line="65" column="78" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="83" column="27" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -395,8 +404,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
+            <state relative-caret-position="289">
               <caret line="135" column="19" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-289">
+              <caret line="75" column="43" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -405,31 +423,7 @@
         <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="491">
-              <caret line="103" column="46" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-              <folding>
-                <element signature="e#2573#2851#0" expanded="true" />
-                <element signature="e#2850#2851#0" expanded="true" />
-                <element signature="e#3234#3512#0" expanded="true" />
-                <element signature="e#3511#3512#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
+              <caret line="104" column="115" selection-start-line="104" selection-start-column="115" selection-end-line="104" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -1161,14 +1155,14 @@
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessService.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" />
-        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java" />
-        <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java" />
+        <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1380,7 +1374,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558690087444" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558691635912" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-composer.yml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
@@ -1647,12 +1641,12 @@
       <workItem from="1558423731729" duration="1671000" />
       <workItem from="1558454760137" duration="1550000" />
       <workItem from="1558458630565" duration="1875000" />
-      <workItem from="1558634243584" duration="3610000" />
+      <workItem from="1558634243584" duration="5255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342519000" />
+    <option name="totallyTimeSpent" value="344164000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1665,7 +1659,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20858485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1729,11 +1722,16 @@
           </properties>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/ro_vitoc_licenta_licenta_web_main_war_exploded.xml" />
     <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1991,40 +1989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-          <folding>
-            <element signature="e#2573#2851#0" expanded="true" />
-            <element signature="e#2850#2851#0" expanded="true" />
-            <element signature="e#3234#3512#0" expanded="true" />
-            <element signature="e#3511#3512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/preConfig/DockerPreConfigImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -2039,10 +2003,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="135" column="19" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+        <state relative-caret-position="457">
+          <caret line="114" column="120" selection-start-line="114" selection-start-column="120" selection-end-line="114" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="104" column="115" selection-start-line="104" selection-start-column="115" selection-end-line="104" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="110" column="112" selection-start-line="110" selection-start-column="112" selection-end-line="110" selection-end-column="112" />
         </state>
       </provider>
     </entry>
@@ -2053,24 +2031,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="103" column="46" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java">
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1066">
-          <caret line="109" column="43" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
+        <state relative-caret-position="289">
+          <caret line="135" column="19" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java">
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="114" column="120" selection-start-line="114" selection-start-column="120" selection-end-line="114" selection-end-column="120" />
+        <state relative-caret-position="363">
+          <caret line="83" column="27" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/DockerPreCheckImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="65" column="78" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="75" column="43" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
         </state>
       </provider>
     </entry>

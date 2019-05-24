@@ -73,7 +73,7 @@ public class CommonServiceImpl implements CommonService {
         log.trace("createDockerFile: location={},lang={},parameters={}", project.getLocation(), project.getLang(), project.getParameters());
         FileWriter fileWriter = new FileWriter(project.getLocation() + "\\Dockerfile");
 
-        if (project.getLang().contains("python")) {
+        if (project.getLang().toLowerCase().contains("python")) {
             String language = "FROM ";
             if (project.getLang().contains("2.7"))
                 language += "python:2.7-slim\n";
@@ -130,9 +130,9 @@ public class CommonServiceImpl implements CommonService {
         log.trace("createRequirementsFile: location={}, req={}", project.getLocation());
         try {
             if (project.getLang().toLowerCase().contains("python")) {
-                processService.executeCommandFIX(installPipReqs);
+                processService.executeCommandFIX(installPipReqs.split(" "));
                 //.replace("\\","/").replace(" ","\\ ")
-                processService.executeCommandFIX(createReqs + " \"" + project.getLocation() + "\"");
+                processService.executeCommand(createReqs + " \"" + project.getLocation() + "\"");
             }
         } catch (IOException | TimeoutException | InterruptedException e) {
             log.trace("createRequirementsFile failed with message={}",e.getMessage());

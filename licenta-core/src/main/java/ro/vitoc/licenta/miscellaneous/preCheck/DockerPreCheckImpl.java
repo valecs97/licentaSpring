@@ -12,6 +12,8 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeoutException;
 
@@ -44,7 +46,9 @@ public class DockerPreCheckImpl implements DockerPreCheck {
         String vms = processService.executeCommand(getVMsCommand);
         if (Arrays.stream(vms.split("\n")).noneMatch(elem -> elem.split(" ")[0].equals(defaultVMName))) {
             log.trace("Default virtual machine doesn't exists ! Creating one !");
-            String res = processService.executeCommand(createDefaultVMWithHyperV + " " + switchName + " " + defaultVMName);
+            List<String> command = Arrays.asList(createDefaultVMWithHyperV.split(" "));
+            command.addAll(Arrays.asList(switchName, defaultVMName));
+            String res = processService.executeCommand(command.toArray(new String[0]));
             log.trace(res);
             String fileContent = null;
             try {
@@ -57,7 +61,9 @@ public class DockerPreCheckImpl implements DockerPreCheck {
         }else if (Arrays.stream(vms.split("\n")).noneMatch(elem -> elem.split(" ")[0].equals(defaultVMName) && elem.split(" ")[1].equals("Running"))) {
             log.trace("Default virtual machine is not running ! Starting the machine !");
             try {
-                processService.executeCommandFIX(new String[]{"docker-machine","start",defaultVMName});
+                List<String> command = Arrays.asList(startDefaultVM.split(" "));
+                command.addAll(Collections.singletonList(defaultVMName));
+                processService.executeCommandFIX(command.toArray(new String[0]));
             } catch (InterruptedException | TimeoutException e) {
                 log.trace("checkDefaultVM failed to start the virtual machine with message={}",e.getMessage());
             }
