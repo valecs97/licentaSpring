@@ -44,6 +44,8 @@ public class SimpleProjectController {
     ) {
         log.trace("executeSimpleScript");
 
+        long start = System.nanoTime();
+
         SimpleProject res = simpleProjectFacade.findSimpleProjectByName(tag);
 
         log.trace("Project found, res={}",res);
@@ -58,6 +60,8 @@ public class SimpleProjectController {
 
         log.trace("executeSimpleScript: result=\n{}", result);
 
+        log.trace("Performance executing ms={}",System.nanoTime() - start);
+
         return new ResponseEntity(result, HttpStatus.OK);
     }
 
@@ -65,6 +69,8 @@ public class SimpleProjectController {
     public ResponseEntity createSimpleProject(
             @RequestBody final SimpleProjectDto simpleProjectDto) {
         log.trace("createSimpleScript: simpleProjectDto={}", simpleProjectDto);
+
+        long start = System.nanoTime();
 
         if (simpleProjectFacade.findSimpleProjectByName(simpleProjectDto.getName()) != null) {
             return new ResponseEntity("A project with the same name exists already !", HttpStatus.CONFLICT);
@@ -104,6 +110,8 @@ public class SimpleProjectController {
         SimpleProjectDto dto = simpleProjectFacade.createProjectScript(simpleProjectDto, branch, gitFacade.getLocation(simpleProject.getName()));
 
         log.trace("createdSimpleScript: dto={}", dto);
+
+        log.trace("Performance adding simple project ms={}",System.nanoTime() - start);
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }

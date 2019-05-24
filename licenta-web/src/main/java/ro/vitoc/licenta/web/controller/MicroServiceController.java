@@ -63,6 +63,7 @@ public class MicroServiceController {
     public ResponseEntity createMicroService(
             @RequestBody final MicroServiceDto microServiceDto) {
         log.trace("createMicroService: microServiceDto={}", microServiceDto);
+        long start = System.nanoTime();
         if (microServiceFacade.find(Example.of(MicroService.builder().name(microServiceDto.getName()).build())) != null){
             return new ResponseEntity("A project with the same name exists already !", HttpStatus.CONFLICT);
         }
@@ -105,6 +106,8 @@ public class MicroServiceController {
         dockerFacade.redeployAll();
 
         dockerPreConfig.attachLogToWebSocket(microServiceConvertor.convertDtoToModel(dto));
+
+        log.trace("Performance adding micro ms={}",System.nanoTime() - start);
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }

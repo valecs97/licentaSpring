@@ -57,6 +57,7 @@ public class WebMicroServiceController {
     public ResponseEntity createWebMicroService(
             @RequestBody final WebMicroServiceDto webMicroServiceDto) {
         log.trace("createWebMicroService: webMicroServiceDto={}", webMicroServiceDto);
+        long start = System.nanoTime();
         if (webMicroServiceFacade.find(Example.of(WebMicroService.builder().name(webMicroServiceDto.getName()).build())) != null){
             return new ResponseEntity("A project with the same name exists already !", HttpStatus.CONFLICT);
         }
@@ -99,6 +100,8 @@ public class WebMicroServiceController {
         dockerFacade.redeployAll();
 
         dockerPreConfig.attachLogToWebSocket(webMicroServiceConvertor.convertDtoToModel(dto));
+
+        log.trace("Performance adding webmicro ms={}",System.nanoTime() - start);
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }
