@@ -27,6 +27,7 @@ import ro.vitoc.licenta.web.preConfig.DockerPreConfig;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class MicroServiceController {
@@ -107,7 +108,7 @@ public class MicroServiceController {
 
         dockerPreConfig.attachLogToWebSocket(microServiceConvertor.convertDtoToModel(dto));
 
-        log.trace("Performance adding micro ms={}",System.nanoTime() - start);
+        log.trace("Performance adding micro ms={}", TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start)/100);
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }

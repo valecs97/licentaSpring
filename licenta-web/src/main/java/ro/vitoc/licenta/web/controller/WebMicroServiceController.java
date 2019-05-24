@@ -21,6 +21,7 @@ import ro.vitoc.licenta.web.preConfig.DockerPreConfig;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class WebMicroServiceController {
@@ -101,7 +102,7 @@ public class WebMicroServiceController {
 
         dockerPreConfig.attachLogToWebSocket(webMicroServiceConvertor.convertDtoToModel(dto));
 
-        log.trace("Performance adding webmicro ms={}",System.nanoTime() - start);
+        log.trace("Performance adding webmicro ms={}", TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start)/100);
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }

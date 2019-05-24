@@ -16,6 +16,7 @@ import ro.vitoc.licenta.core.model.SimpleProject;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class SimpleProjectController {
@@ -60,7 +61,7 @@ public class SimpleProjectController {
 
         log.trace("executeSimpleScript: result=\n{}", result);
 
-        log.trace("Performance executing ms={}",System.nanoTime() - start);
+        log.trace("Performance executing ms={}", TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start)/100);
 
         return new ResponseEntity(result, HttpStatus.OK);
     }
@@ -111,7 +112,7 @@ public class SimpleProjectController {
 
         log.trace("createdSimpleScript: dto={}", dto);
 
-        log.trace("Performance adding simple project ms={}",System.nanoTime() - start);
+        log.trace("Performance adding simple project ms={}",TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start)/100);
 
         return new ResponseEntity("All ok !", HttpStatus.OK);
     }
