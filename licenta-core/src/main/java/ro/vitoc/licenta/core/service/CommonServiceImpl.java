@@ -57,7 +57,8 @@ public class CommonServiceImpl implements CommonService {
         } else if (project.getLang().toLowerCase().contains("java")) {
             try {
                 fileWriter.write(createDockerFileJava(0).replace("\\r\\n","\n").replace("\\\"","\""));
-                fileWriter.write("EXPOSE " + ((WebMicroService) project).getPortIn() + "\n");
+                if (web)
+                    fileWriter.write("EXPOSE " + ((WebMicroService) project).getPortIn() + "\n");
             } catch (URISyntaxException e) {
                 e.printStackTrace();
                 return 2;

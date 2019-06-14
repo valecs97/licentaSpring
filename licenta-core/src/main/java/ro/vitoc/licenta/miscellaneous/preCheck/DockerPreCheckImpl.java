@@ -11,6 +11,7 @@ import ro.vitoc.licenta.miscellaneous.service.ProcessService;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -42,14 +43,13 @@ public class DockerPreCheckImpl implements DockerPreCheck {
     }
 
     @PostConstruct
-    public void checkDefaultVM() throws IOException {
+    public void checkDefaultVM() throws IOException, TimeoutException, InterruptedException {
         String vms = processService.executeCommand(getVMsCommand);
         if (Arrays.stream(vms.split("\n")).noneMatch(elem -> elem.split(" ")[0].equals(defaultVMName))) {
             log.trace("Default virtual machine doesn't exists ! Creating one !");
-            List<String> command = Arrays.asList(createDefaultVMWithHyperV.split(" "));
+            List<String> command = new ArrayList<>(Arrays.asList(createDefaultVMWithHyperV.split(" ")));
             command.addAll(Arrays.asList(switchName, defaultVMName));
-            String res = processService.executeCommand(command.toArray(new String[0]));
-            log.trace(res);
+            processService.executeCommandFIX(command.toArray(new String[0]));
             String fileContent = null;
             try {
                 fileContent = dockerAlgorithms.createDefaultDockerComposer();
@@ -61,7 +61,7 @@ public class DockerPreCheckImpl implements DockerPreCheck {
         }else if (Arrays.stream(vms.split("\n")).noneMatch(elem -> elem.split(" ")[0].equals(defaultVMName) && elem.split(" ")[1].equals("Running"))) {
             log.trace("Default virtual machine is not running ! Starting the machine !");
             try {
-                List<String> command = Arrays.asList(startDefaultVM.split(" "));
+                List<String> command = new ArrayList<>(Arrays.asList(startDefaultVM.split(" ")));
                 command.addAll(Collections.singletonList(defaultVMName));
                 processService.executeCommandFIX(command.toArray(new String[0]));
             } catch (InterruptedException | TimeoutException e) {
