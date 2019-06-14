@@ -240,24 +240,24 @@
     <session id="822982956">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="39" />
+          <entry key="project.closed" value="42" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="7" />
           <entry key="project.open.time.13" value="9" />
-          <entry key="project.open.time.14" value="9" />
+          <entry key="project.open.time.14" value="10" />
           <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="5" />
           <entry key="project.open.time.17" value="2" />
-          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="47" />
+          <entry key="project.opened" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -267,23 +267,23 @@
           <entry key="bat" value="1" />
           <entry key="gradle" value="21" />
           <entry key="gradlew" value="1" />
-          <entry key="java" value="875" />
+          <entry key="java" value="878" />
           <entry key="md" value="1" />
-          <entry key="properties" value="42" />
+          <entry key="properties" value="43" />
           <entry key="py" value="1" />
           <entry key="xml" value="6" />
-          <entry key="yml" value="6" />
+          <entry key="yml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="21" />
-          <entry key="JAVA" value="875" />
+          <entry key="JAVA" value="878" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Properties" value="42" />
+          <entry key="Properties" value="43" />
           <entry key="XML" value="6" />
-          <entry key="YAML" value="6" />
+          <entry key="YAML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -343,93 +343,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="150" column="45" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="62" column="42" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/dto/MicroServiceDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/dto/ServiceConfigurationDto.java">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/dto/WebMicroServiceDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/GitServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="149" column="19" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="121" column="18" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+            <state relative-caret-position="-1719">
+              <caret line="2034" column="61" selection-start-line="2034" selection-start-column="61" selection-end-line="2034" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -470,7 +389,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\valec\.gradle\wrapper\dists\gradle-4.0-all\ac27o8rbd0ic8ih41or9l32mv\gradle-4.0" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\Vitoc\.gradle\wrapper\dists\gradle-4.0-all\ac27o8rbd0ic8ih41or9l32mv\gradle-4.0" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -925,7 +844,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="10876826426930" />
+        <entry key="$PROJECT_DIR$" value="10880900538655" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="153059177" />
         <entry key="$PROJECT_DIR$/catalog-core/build.gradle" value="921521400" />
@@ -1161,7 +1080,6 @@
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/service/ProcessServiceImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/preCheck/CommonPreCheckImpl.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/DockerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/SimpleProjectController.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java" />
         <option value="$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/MicroServiceController.java" />
         <option value="$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/miscellaneous/algorithms/DockerAlgorithmsImpl.java" />
@@ -1199,178 +1117,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="miscellaneous" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta" type="462c0819:PsiDirectoryNode" />
-              <item name="miscellaneous" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="licenta-2-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="licentaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="licenta-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="preConfig" type="462c0819:PsiDirectoryNode" />
+              <item name="licentaSpring" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1442,7 +1201,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="RestServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.7" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -1671,10 +1430,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20120725" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24949698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -1696,7 +1455,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.329718" />
       <window_info anchor="bottom" id="TODO" order="12" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.329718" />
-      <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49946696" weight="0.3275488" />
+      <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49946696" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.48081023" weight="0.25354108" />
       <window_info anchor="bottom" id="Statistic" order="17" weight="0.3286119" />
@@ -1736,12 +1495,6 @@
           </properties>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -1757,18 +1510,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/resources/docker-composer.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/licenta-web/src/main/resources/local/db.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="40" selection-start-column="40" selection-end-column="40" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/resources/local/docker.properties">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/licenta-web/src/main/resources/local/redis.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -1867,28 +1614,21 @@
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/SimpleProjectFacadeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="56" selection-end-column="41" />
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/WebMicroServiceFacadeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
-          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="67" selection-end-column="43" />
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/facade/MicroServiceFacadeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/converter/SimpleScriptConvertor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="731">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1945,13 +1685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="104" column="115" selection-start-line="104" selection-start-column="115" selection-end-line="104" selection-end-column="115" />
         </state>
       </provider>
     </entry>
@@ -2032,7 +1765,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/service/CommonServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/licenta-core/src/main/java/ro/vitoc/licenta/core/converter/SimpleScriptConvertor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenta-web/src/main/java/ro/vitoc/licenta/web/controller/WebMicroServiceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
           <caret line="149" column="19" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
