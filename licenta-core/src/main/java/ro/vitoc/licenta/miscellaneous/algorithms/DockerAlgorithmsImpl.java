@@ -112,6 +112,8 @@ public class DockerAlgorithmsImpl implements DockerAlgorithms {
         String vm = processService.getVMInfo(defaultVMName);
         if (vm != null) {
             String ip = vm.split(" ")[2].split("//")[1].split(":")[0];
+            //log.trace("Creating swarm init");
+            //processService.executeCommandFIX(processService.executeInVM(defaultVMName, swarmInitCommand + " " + ip));
             log.trace("Launching the docker composer");
             processService.executeCommandFIX(processService.executeInVM(defaultVMName, deployStackCommand + " " + defaultDockerComposerFile + " " + swarmName));
         }
