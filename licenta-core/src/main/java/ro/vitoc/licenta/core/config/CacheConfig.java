@@ -40,6 +40,7 @@ public class CacheConfig {
                     DockerPreCheckImpl.VMStatus.await();
                     redisHostName = ProcessServiceImpl.getDefaultVMInfoGlobal(defaultVMName)
                             .split(" ")[2].split("//")[1].split(":")[0];
+                    System.out.println("VM IP" + redisHostName);
 
                 } catch (InterruptedException e) {
                     log.trace("GetDefaultVMHostName thread intrerrupted");
@@ -65,7 +66,6 @@ public class CacheConfig {
 
     @Bean
     public JedisConnectionFactory jedisConnectionFactory() {
-        System.out.println(redisHostName + " " + redisPort);
         RedisStandaloneConfiguration configuration =
                 new RedisStandaloneConfiguration(redisHostName, 6379);
         JedisConnectionFactory res = new JedisConnectionFactory(configuration);
